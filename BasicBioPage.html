@@ -14,8 +14,31 @@
 <link rel="stylesheet" href="css/grid.css">
 <link rel="stylesheet" href="css/bootstrap-grid.css.map">
 <script src="js/bootstrap.bundle.min.js"></script>
+<!-- CSS File which will be referenced in -->
+<script src="js/bootstrap.bundle.min.js"></script>
+	
+<!-- CSS -->
+<style>
+/* Background color of webpage */
+	body{
+		background-color: bisque;
+	}
+/* CLASS LEVEL */
+	.insertclasshere {
+		float: left;
+		width: 20%;
+		/*  Changes negative space inside of the element */
+		padding: 8px;
+		/*  Changes negative space outside of the element */
+		margin: 2px;
+		background-color: lightgray;
+		border: 1px solid #000000;
+	}
 	
 	
+	
+	
+</style>
 </head>
 
 	
@@ -27,36 +50,108 @@
 <h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6>
 
 <!-- A photograph of you, or a photograph that relates to you or your major-->
-<img src="images/pfp2026.png" alt="Picture of me (flesh out)">
-<img src="images/cartoonMe.png" alt="Picture of me (flesh out)">
+<img src="images/pfp2026.png" width="350px" class="img-fluid" alt="Picture of me (flesh out)">
+<img src="images/cartoonMe.png" width="200px" class="img-fluid" alt="Picture of me (flesh out)">
 
 <!-- A paragraph of text that tells us something about you-->
-<p>Sophia Reeder is a designer obsessed with UI micro interactions, cats who sit on windows, and games with branching narratives.
-
-Sophia has always been fascinated with how people interact with technology and is passionate about producing diverse stories. She is currently pursing an MFA in Design where her research explores how immersive UI for interactive experiences can be inclusively designed.
-
-Currently, Sophia is editing movement as a Motion Capture GRA and volunteering her time to help create a medical app for The James: Cancer Treatment and Research Center.</p>
+<p>Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production [&] Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.
+<br>
+She is currently the motion capture GRA and works with both markered and markerless technology. She is currently researching retention during onboarding processes, using serious games as an educational tool that promote learning by doing. Sophia enjoys creating UI for games, editing motion capture footage, and running user testing.
+<br>
+Sophia can most frequently be found working in Sullivant Hall and the Motion Lab.</p>
 	
 <!-- An ordered or unordered list of your top 5 favorite books, movies, games, or other hobbies-->
-<h5>An (Unordered) List of 5 Favorite Games</h5>
+<h5>An (Unordered) Collection of 6 Favorite Games</h5>
 	
-<h6>Game 1</h6>
-<img src="images/pfp2026.png" alt="Picture of me (flesh out)">
-
-<h6>Game 2</h6>
-<img src="images/pfp2026.png" alt="Picture of me (flesh out)">
+<!-- Arranging cards inside of stacks to help with layout -->
+<!-- USING CARD GROUPS-->
 	
-<h6>Game 3</h6>
-<img src="images/pfp2026.png" alt="Picture of me (flesh out)">
+<div class="card-group">
+  <div class="card">
+  	<img src="images/E33.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Claire Obscur: Expedition 33</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    </div>
+  </div>
+</div>
 
-<h6>Game 4</h6>
-<img src="images/pfp2026.png" alt="Picture of me (flesh out)">
-
-<h6>Game 5</h6>
-<img src="images/pfp2026.png" alt="Picture of me (flesh out)">
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Expedition 33</h5>
+  		<img src="images/E33.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Persona 5 Royal</h5>
+  		<img src="images/P5R.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Hi-Fi Rush</h5>
+  		<img src="images/HiFi.jpg" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+</div>
+	
+	
+<!-- Second Row -->
+<div class="hstack gap-3">
+  <div class="p-2">
+	<div class="card" style="width: 18rem;">
+  			<img src="images/Contradiction.jpg" class="card-img-top" alt="...">
+  			<div class="card-body">
+   		 	<p class="card-text">Contradiction</p>
+  			</div>
+	</div>
+	</div>
+  <div class="p-2">
+	<div class="card" style="width: 18rem;">
+  			<img src="images/MR.jpg" class="card-img-top" alt="...">
+  			<div class="card-body">
+   		 	<p class="card-text">Marvel Rivals</p>
+	
+			</div>
+	</div>
+	</div>
+  <div class="p-2">
+	<div class="card" style="width: 18rem;">
+  			<img src="images/Psych2.jpg" class="card-img-top" alt="...">
+  			<div class="card-body">
+   		 	<p class="card-text">Psychonauts 2</p>
+	
+			</div>
+	</div>
+	</div>
+</div>
 	
 <!-- Any additional information you choose to include -->
 <h5>Additional Information</h5>
+<h6>Names You Can Call Sophia</h6>
+
+
 <a href="http://www.google.com" target="_blank">Personal Website</a>
 
 	
