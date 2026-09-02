@@ -21,18 +21,45 @@
 <style>
 /* Background color of webpage */
 	body{
-		background-color: bisque;
+		background-color: #97B8C3;
+	}
+	
+/* PAGE LEVEL */
+	* {
+		font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	}
+	/* TAG LEVEL */
+	h1 {
+		color: darkblue;
+		font-weight: 600;
+	}
+	h2 {
+		
 	}
 /* CLASS LEVEL */
-	.insertclasshere {
-		float: left;
-		width: 20%;
+	
+	.card-img-top {
+   	 	width: 100%;
+    	height: 250px; /* Adjust this height value as needed */
+    	object-fit: cover;
+	}
+
+	.cardFormat {
+		float: middle;
+		width: 100%;
 		/*  Changes negative space inside of the element */
-		padding: 8px;
+		padding: 10px;
 		/*  Changes negative space outside of the element */
-		margin: 2px;
-		background-color: lightgray;
-		border: 1px solid #000000;
+		margin: 0px;
+	}
+	
+	.cardFormat2 {
+		float: left;
+		width: 100%;
+		/*  Changes negative space inside of the element */
+		padding: 10px;
+		/*  Changes negative space outside of the element */
+		margin: 10px;
 	}
 	
 	
@@ -45,7 +72,7 @@
 <body>
 <!-- Your name & major (or area of focus/research)-->
 <h1>Sophia Reeder</h1>
-<h6>Design MFA, Digital Animation [&] Interactive Media</h6>
+<h6>Design MFA, Digital Animation &amp; Interactive Media</h6>
 <h5>Research Focus</h5>
 <h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6>
 
@@ -54,7 +81,7 @@
 <img src="images/cartoonMe.png" width="200px" class="img-fluid" alt="Picture of me (flesh out)">
 
 <!-- A paragraph of text that tells us something about you-->
-<p>Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production [&] Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.
+<p>Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production &amp; Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.
 <br>
 She is currently the motion capture GRA and works with both markered and markerless technology. She is currently researching retention during onboarding processes, using serious games as an educational tool that promote learning by doing. Sophia enjoys creating UI for games, editing motion capture footage, and running user testing.
 <br>
@@ -66,48 +93,44 @@ Sophia can most frequently be found working in Sullivant Hall and the Motion Lab
 <!-- Arranging cards inside of stacks to help with layout -->
 <!-- USING CARD GROUPS-->
 	
-<div class="card-group">
-  <div class="card">
+<div class="card-group cardFormat">
+  <div class="card cardFormat2">
   	<img src="images/E33.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Claire Obscur: Expedition 33</h5>
     </div>
   </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
+  <div class="card cardFormat2">
+    <img src="images/P5R.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Persona 5 Royal</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
+  <div class="card cardFormat2">
+    <img src="images/HiFi.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Hi-Fi Rush</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
     </div>
   </div>
 </div>
 	
-<div class="card-group">
-  <div class="card">
-  	<img src="images/E33.png" class="card-img-top" alt="...">
+<div class="card-group cardFormat">
+  <div class="card cardFormat2">
+  	<img src="images/Contradiction.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Contradiction</h5>
     </div>
   </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
+  <div class="card cardFormat2">
+    <img src="images/MR.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Marvel Rivals</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
+  <div class="card cardFormat2">
+    <img src="images/Psych2.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Psychonauts 2</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
     </div>
   </div>
 </div>
