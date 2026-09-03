@@ -62,7 +62,25 @@
 		margin: 10px;
 	}
 	
+	.navTheme {
+		width: 100%;
+		height: 60px;
+		background-color: blue;
+	}
 	
+	.columnDiv {
+		float: left;
+		width: 50%;
+		/*  Changes negative space inside of the element */
+		padding: 8px;
+		/*  Changes negative space outside of the element */
+		margin: 2px;
+	}
+	
+	.rowDiv {
+		float: left;
+		width: 20%;
+	}
 	
 	
 </style>
@@ -70,15 +88,41 @@
 
 	
 <body>
+<!-- Nav Bar (stick top) -->
+<nav class="navbar sticky-top navTheme">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="images/cartoonMe.png" width="30px" class="img-fluid" alt="Picture of me (flesh out)">
+Sophia Reeder</a>
+  </div>
+</nav>
 <!-- Your name & major (or area of focus/research)-->
-<h1>Sophia Reeder</h1>
-<h6>Design MFA, Digital Animation &amp; Interactive Media</h6>
-<h5>Research Focus</h5>
+<div>
+	<div class="coloumnDiv"><img src="images/pfp2026.png" width="350px" class="img-fluid" alt="Picture of me (flesh out)">
+		<table>
+		<tr>
+			<td><h5>Research Focus</h5></td>
+			<td><h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6></td>
+		</tr>
+		</table>
+	</div>
+	<div class="columnDiv">	<h1>Sophia Reeder</h1><h6>Design MFA, Digital Animation &amp; Interactive Media</h6>
+		<table>
+		<tr>
+			<td><div class="comulmnDiv"><h5>Research Focus</h5></div></td>
+			<td><h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6></td>
+		</tr>
+		</table>
+	</div>
+</div>
+	
+	
+<div>
+	<div class="comulmnDiv"><h5>Research Focus</h5></div>
+</div>
 <h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6>
 
 <!-- A photograph of you, or a photograph that relates to you or your major-->
-<img src="images/pfp2026.png" width="350px" class="img-fluid" alt="Picture of me (flesh out)">
-<img src="images/cartoonMe.png" width="200px" class="img-fluid" alt="Picture of me (flesh out)">
+<!-- <img src="images/pfp2026.png" width="350px" class="img-fluid" alt="Picture of me (flesh out)"> -->
 
 <!-- A paragraph of text that tells us something about you-->
 <p>Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production &amp; Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.
