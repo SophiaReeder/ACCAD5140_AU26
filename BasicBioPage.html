@@ -21,7 +21,7 @@
 <style>
 /* Body of webpage */
 	body{
-		background-color: #BCCED4;
+		background-color: #7CAAA6;
 	}
 	
 /* PAGE LEVEL */
@@ -42,7 +42,8 @@
 	h5 {
 		color: #072935;
 		font-family: "Segoe UI Black";
-		margin-left: 20px;
+		text-align: center;
+		color: #D1E7DD;
 	}
 	h6 {
 		font-family: "Segoe";
@@ -80,37 +81,34 @@
 		width: 100%;
 		padding: 0px;
 		margin: 8px;
-		background-color: #657F88;
-		border: 0px solid #FFFFFF;
-		border-radius: 8px;
+		background-color: #D1E7DD;
 	}
 	
 	.cardText {
 		font-family: "Segoe Script";
 		font-style: italic;
-		color: #FFFFFF;
+		color: #487773;
 		text-align: center;
 	}
 	
 	.navTheme {
 		width: 100%;
 		height: 60px;
-		background-color: #657F88;
+		background-color: #487773;
 	}
 	
 	.navText {
 		font-family: "Segoe Script";
 		font-style: italic;
 		color: #FFFFFF;
-		margin-left: 20px;
+		margin-left: 40px;
 	}
 	
 	.columnPicture {
 		float: left;
-		width: 30%;
+		width: calc(30% - 80px);
 		padding: 40px;
 		margin-left: 340px;
-		margin-right: 0px;
 		box-sizing: border-box;
 		align-content: right;
 	}
@@ -121,11 +119,10 @@
 		width: 40%;
 		box-sizing: border-box;
 		padding: 0px;
-		margin-top: 250px;
+		margin-top: 150px;
 	}
 	
 	.columnText {
-		float: left;
 		width: calc(100% - 80px);
 		box-sizing: border-box;
 		padding: 0px;
@@ -139,11 +136,11 @@
 	}
 	
 	.blankSpace {
-		margin-bottom: 40px;
+		margin-bottom: 120px;
 	}
 	
 	.bottomMargin {
-		margin-bottom: 80px;
+		margin-bottom: 200px;
 	}
 
 	
@@ -161,7 +158,7 @@
 </nav>
 <!-- Your name & major (or area of focus/research)-->
 	
-<div style="align-content: center">
+<div style="align-content: center" class="bg-success-subtle text-success-emphasis p-3 blankSpace">
 	<div class="columnPicture">
 		<!-- A photograph of you, or a photograph that relates to you or your major-->
 		<img src="images/pfp2026.png" class="img-fluid pfp" alt="Picture of Sophia Reeder taken from the waist up. She is wearing a dark blue dress shirt and black pants. Sophia has bonde hair down to her shoulders.">
@@ -193,6 +190,9 @@
 			<p>She is currently the motion capture GRA and works with both markered and markerless technology. She is currently researching retention, using serious games as an educational tool that promote learning by doing. Sophia enjoys creating UI for games, editing motion capture footage, and running user testing.</p>
 		
 			<p>Sophia can most frequently be found working in Sullivant Hall and the Motion Lab.</p>
+			
+			<p>	<a href="https://sophiareederportfolio.com/#herosection" target="_blank">Personal Website (because why not?)</a></p>
+
 		</div>
 	</div>	
 
@@ -278,10 +278,12 @@
 	
 <!-- Any additional information you choose to include -->
 <div class="columnText bottomMargin" style="margin-top: 20px;">
-	<h5>ADDITIONAL INFORMATION</h5>
-
-	<a href="https://sophiareederportfolio.com/#herosection" target="_blank">Personal Website (because why not?)</a>
+	<h5>PICK YOUR FAVORITE COLOR</h5>
+	
+	<label for="exampleColorInput" class="form-label">Color picker</label>
+	<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
 </div>
+
 		
 </body>
 </html>
