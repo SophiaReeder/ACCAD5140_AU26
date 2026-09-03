@@ -22,7 +22,6 @@
 /* Body of webpage */
 	body{
 		background-color: #BCCED4;
-		max-width: 1280px;
 	}
 	
 /* PAGE LEVEL */
@@ -34,23 +33,19 @@
 		font-family: "Segoe UI Black";
 		font-size: 40px;
 	}
-	h2 {
-		
-	}
-	h3 {
-		color: #072935;
-		font-family: "Segoe UI Black"; 
-	}
+	
 	h4 {
-		
+		color: #072935;
+		font-family: "Segoe UI Black"
 	}
+
 	h5 {
 		color: #072935;
-		font-family: "Segoe UI Black"; 
+		font-family: "Segoe UI Black";
+		margin-left: 20px;
 	}
 	h6 {
-		color: #000000;
-		font-family: "Segoe ";
+		font-family: "Segoe";
 		font-size: 24px;
 		font-style: italic;
 		color: #1B3D4A;
@@ -61,7 +56,8 @@
 		font-family: "Segoe";
 		font-size: 18px;
 		margin-bottom: 20px;
-		margin-right: 40px;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 	
 /* CLASS LEVEL */
@@ -74,10 +70,10 @@
 	}
 
 	.cardFormat {
-		width: calc(100% - 60px);
+		width: calc(100% - 80px);
 		padding: 0px;
-		margin-left: 30px;
-		margin-right: 30px;
+		margin-left: 40px;
+		margin-right: 40px;
 	}
 	
 	.cardFormat2 {
@@ -94,8 +90,6 @@
 		font-style: italic;
 		color: #FFFFFF;
 		text-align: center;
-		padding-left: 20px;
-		padding-right: 20px;
 	}
 	
 	.navTheme {
@@ -113,19 +107,21 @@
 	
 	.columnPicture {
 		float: left;
-		width: 35%;
+		width: 30%;
 		padding: 40px;
-		margin: 0;
+		margin-left: 340px;
+		margin-right: 0px;
 		box-sizing: border-box;
+		align-content: right;
 	}
 	
 	.columnInfo {
 		text-align: center;
 		float: left;
-		width: 60%;
+		width: 40%;
 		box-sizing: border-box;
-		padding: 40px;
-		margin-top: 120px;
+		padding: 0px;
+		margin-top: 250px;
 	}
 	
 	.columnText {
@@ -149,6 +145,7 @@
 	.bottomMargin {
 		margin-bottom: 80px;
 	}
+
 	
 	
 </style>
@@ -159,15 +156,15 @@
 <!-- Nav Bar (stick top) -->
 <nav class="navbar sticky-top navTheme">
   <div class="container-fluid">
-    <a class="navbar-brand navText" href="#"><img src="images/cartoonMe.png" width="30px" class="img-fluid" alt="Picture of cartoon me">Sophia Reeder's Bio Page</a>
+    <a class="navbar-brand navText" href="#"><img src="images/cartoonMe.png" width="30px" class="img-fluid" alt="Drawing of a cartoon version of Sophia looking through a magnifying glass">Sophia Reeder's Bio Page</a>
   </div>
 </nav>
 <!-- Your name & major (or area of focus/research)-->
 	
-<div>
+<div style="align-content: center">
 	<div class="columnPicture">
 		<!-- A photograph of you, or a photograph that relates to you or your major-->
-		<img src="images/pfp2026.png" class="img-fluid pfp" alt="Picture of me (flesh out)">
+		<img src="images/pfp2026.png" class="img-fluid pfp" alt="Picture of Sophia Reeder taken from the waist up. She is wearing a dark blue dress shirt and black pants. Sophia has bonde hair down to her shoulders.">
 
 	</div>
 	
@@ -179,7 +176,7 @@
 			<h6>Design MFA, Digital Animation &amp; Interactive Media</h6>
 		</div>
 		<div class="row-cols-1">
-			<h5>RESEARCH FOCUS</h5>
+			<h4>RESEARCH FOCUS</h4>
 		</div>
 		<div class="row-cols-1">
 			<h6>Exploring the genre of mystery in digital serious educational games<br>and how scaffolding information within these interactive experiences<br>can contribute to better learning.</h6>
