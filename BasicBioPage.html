@@ -19,9 +19,12 @@
 	
 <!-- CSS -->
 <style>
-/* Background color of webpage */
+/* Body of webpage */
 	body{
+		margin: 0;
+		padding: 0;
 		background-color: #97B8C3;
+		max-width: 12
 	}
 	
 /* PAGE LEVEL */
@@ -65,7 +68,7 @@
 	.navTheme {
 		width: 100%;
 		height: 60px;
-		background-color: blue;
+		background-color: #657F88;
 	}
 	
 	.columnDiv {
@@ -82,6 +85,12 @@
 		width: 20%;
 	}
 	
+	.navText {
+		font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+		font-style: italic;
+		color: #FFFFFF;
+	}
+	
 	
 </style>
 </head>
@@ -91,8 +100,7 @@
 <!-- Nav Bar (stick top) -->
 <nav class="navbar sticky-top navTheme">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="images/cartoonMe.png" width="30px" class="img-fluid" alt="Picture of me (flesh out)">
-Sophia Reeder</a>
+    <a class="navbar-brand navText" href="#"><img src="images/cartoonMe.png" width="30px" class="img-fluid" alt="Picture of cartoon me">Sophia Reeder's Bio Page</a>
   </div>
 </nav>
 <!-- Your name & major (or area of focus/research)-->
