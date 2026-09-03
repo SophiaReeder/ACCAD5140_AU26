@@ -8,7 +8,7 @@
 <meta name="author" content="Sophia">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-<title>BasicBioPage</title>
+<title>Sophia Reeder Bio Page</title>
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/grid.css">
@@ -23,8 +23,8 @@
 	body{
 		margin: 0;
 		padding: 0;
-		background-color: #97B8C3;
-		max-width: 12
+		background-color: #BCCED4;
+		max-width: 1280px;
 	}
 	
 /* PAGE LEVEL */
@@ -33,36 +33,74 @@
 	}
 	/* TAG LEVEL */
 	h1 {
-		color: darkblue;
-		font-weight: 600;
+		color: #072935;
+		font-family: "Segoe UI Black";
+		font-size: 40px;
 	}
 	h2 {
 		
 	}
+	h3 {
+		color: #072935;
+		font-family: "Segoe UI Black"; 
+	}
+	h4 {
+		
+	}
+	h5 {
+		color: #072935;
+		font-family: "Segoe UI Black"; 
+	}
+	h6 {
+		color: #000000;
+		font-family: "Segoe ";
+		font-size: 20px;
+		font-style: italic;
+	}
+	p {
+		color: #000000;
+		font-family: "Segoe";
+		font-size: 18px;
+	}
+	
 /* CLASS LEVEL */
 	
 	.card-img-top {
    	 	width: 100%;
     	height: 250px; /* Adjust this height value as needed */
     	object-fit: cover;
+
 	}
 
 	.cardFormat {
-		float: middle;
-		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		width: calc(100% - 40px);
 		/*  Changes negative space inside of the element */
-		padding: 10px;
+		padding: 0px;
 		/*  Changes negative space outside of the element */
-		margin: 0px;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 	
 	.cardFormat2 {
-		float: left;
 		width: 100%;
 		/*  Changes negative space inside of the element */
-		padding: 10px;
+		padding: 0px;
 		/*  Changes negative space outside of the element */
-		margin: 10px;
+		margin: 8px;
+		background-color: #657F88;
+		border: 0px solid #FFFFFF;
+		border-radius: 8px;
+	}
+	
+	.cardText {
+		font-family: "Segoe Script";
+		font-style: italic;
+		color: #FFFFFF;
+		text-align: center;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	
 	.navTheme {
@@ -71,24 +109,63 @@
 		background-color: #657F88;
 	}
 	
-	.columnDiv {
-		float: left;
-		width: 50%;
-		/*  Changes negative space inside of the element */
-		padding: 8px;
-		/*  Changes negative space outside of the element */
-		margin: 2px;
-	}
-	
-	.rowDiv {
-		float: left;
-		width: 20%;
-	}
-	
 	.navText {
-		font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+		font-family: "Segoe Script";
 		font-style: italic;
 		color: #FFFFFF;
+		margin-left: 20px;
+	}
+	
+	.columnPicture {
+		float: left;
+		width: 30%;
+		/*  Changes negative space inside of the element */
+		padding: 40px;
+		/*  Changes negative space outside of the element */
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	
+	.columnInfo {
+		float: left;
+		width: 70%;
+		box-sizing: border-box;
+		/*  Changes negative space inside of the element */
+		padding: 40px;
+		padding-left: 4px;
+		/*  Changes negative space outside of the element */
+		margin: 0px;
+	}
+	
+	.columnDiv3 {
+		float: left;
+		width: 80%;
+		box-sizing: border-box;
+		/*  Changes negative space inside of the element */
+		padding: 0px;
+		/*  Changes negative space outside of the element */
+		margin-left: 40px;
+	}
+	
+	.columnDiv4 {
+		float: left;
+		width: 100%;
+		box-sizing: border-box;
+		/*  Changes negative space inside of the element */
+		padding: 0px;
+		/*  Changes negative space outside of the element */
+		margin-left: 40px;
+	}
+
+	
+	.pfp {
+		border: 2px solid #FFFFFF;
+		border-radius: 8px;
+	}
+	
+	.paragraph {
+		margin-bottom: 12px;
 	}
 	
 	
@@ -104,64 +181,70 @@
   </div>
 </nav>
 <!-- Your name & major (or area of focus/research)-->
-<div>
-	<div class="coloumnDiv"><img src="images/pfp2026.png" width="350px" class="img-fluid" alt="Picture of me (flesh out)">
-		<table>
-		<tr>
-			<td><h5>Research Focus</h5></td>
-			<td><h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6></td>
-		</tr>
-		</table>
-	</div>
-	<div class="columnDiv">	<h1>Sophia Reeder</h1><h6>Design MFA, Digital Animation &amp; Interactive Media</h6>
-		<table>
-		<tr>
-			<td><div class="comulmnDiv"><h5>Research Focus</h5></div></td>
-			<td><h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6></td>
-		</tr>
-		</table>
-	</div>
-</div>
-	
 	
 <div>
-	<div class="comulmnDiv"><h5>Research Focus</h5></div>
-</div>
-<h6>Exploring how serious educational games can be designed to encourage knowledge retention.</h6>
+	<div class="columnPicture">
+		<!-- A photograph of you, or a photograph that relates to you or your major-->
+		<img src="images/pfp2026.png" class="img-fluid pfp" alt="Picture of me (flesh out)">
 
-<!-- A photograph of you, or a photograph that relates to you or your major-->
-<!-- <img src="images/pfp2026.png" width="350px" class="img-fluid" alt="Picture of me (flesh out)"> -->
-
-<!-- A paragraph of text that tells us something about you-->
-<p>Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production &amp; Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.
-<br>
-She is currently the motion capture GRA and works with both markered and markerless technology. She is currently researching retention during onboarding processes, using serious games as an educational tool that promote learning by doing. Sophia enjoys creating UI for games, editing motion capture footage, and running user testing.
-<br>
-Sophia can most frequently be found working in Sullivant Hall and the Motion Lab.</p>
+	</div>
+	<div class="columnInfo">
+		<div class="row-cols-1">
+			<h1>Sophia Reeder</h1>
+		</div>
+		<div class="row-cols-1 paragraph">
+			<h6>Design MFA, Digital Animation &amp; Interactive Media</h6>
+		</div>
+		<div class="row-cols-1">
+			<h5>Research Focus</h5>
+		</div>
+		<div class="row-cols-1">
+			<h6>Exploring the genre of mystery in digital serious educational games and how scaffolding information within interactive experiences can contribute to better learning.</h6>
+		</div>
+		
+	</div>
 	
-<!-- An ordered or unordered list of your top 5 favorite books, movies, games, or other hobbies-->
-<h5>An (Unordered) Collection of 6 Favorite Games</h5>
+	<div>
+		<div class="columnDiv4">
+			<h5>About</h5>
+			<!-- A paragraph of text that tells us something about you-->
+			<p style="paragraph">Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production &amp; Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.</p>
+		
+			<p style="paragraph">She is currently the motion capture GRA and works with both markered and markerless technology. She is currently researching retention, using serious games as an educational tool that promote learning by doing. Sophia enjoys creating UI for games, editing motion capture footage, and running user testing.</p>
+		
+			<p>Sophia can most frequently be found working in Sullivant Hall and the Motion Lab.</p>
+		</div>
+
+		</div>
+		
+	<div class="columnDiv3" style="margin-top: 20px;">
+	<!-- An ordered or unordered list of your top 5 favorite books, movies, games, or other hobbies-->
+	<h5>An (Unordered) Collection of 6 Favorite Games</h5>
+
+	</div>
+</div>
 	
 <!-- Arranging cards inside of stacks to help with layout -->
 <!-- USING CARD GROUPS-->
 	
+<div>
 <div class="card-group cardFormat">
   <div class="card cardFormat2">
   	<img src="images/E33.png" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Claire Obscur: Expedition 33</h5>
+      <h5 class="card-title cardText">Claire Obscur: Expedition 33</h5>
     </div>
   </div>
   <div class="card cardFormat2">
     <img src="images/P5R.png" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Persona 5 Royal</h5>
+      <h5 class="card-title cardText">Persona 5 Royal</h5>
     </div>
   </div>
   <div class="card cardFormat2">
     <img src="images/HiFi.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Hi-Fi Rush</h5>
+      <h5 class="card-title cardText">Hi-Fi Rush</h5>
     </div>
   </div>
 </div>
@@ -170,31 +253,30 @@ Sophia can most frequently be found working in Sullivant Hall and the Motion Lab
   <div class="card cardFormat2">
   	<img src="images/Contradiction.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Contradiction</h5>
+      <h5 class="card-title cardText">Contradiction</h5>
     </div>
   </div>
   <div class="card cardFormat2">
     <img src="images/MR.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Marvel Rivals</h5>
+      <h5 class="card-title cardText">Marvel Rivals</h5>
     </div>
   </div>
   <div class="card cardFormat2">
     <img src="images/Psych2.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Psychonauts 2</h5>
+      <h5 class="card-title cardText">Psychonauts 2</h5>
     </div>
   </div>
 </div>
-	
+</div>
 	
 <!-- Any additional information you choose to include -->
+<div class="columnDiv3" style="margin-top: 20px;">
 <h5>Additional Information</h5>
-<h6>Names You Can Call Sophia</h6>
 
-
-<a href="http://www.google.com" target="_blank">Personal Website</a>
-
+<a href="https://sophiareederportfolio.com/#herosection" target="_blank">Personal Website (because why not?)</a>
+</div>
 	
 </body>
 </html>
