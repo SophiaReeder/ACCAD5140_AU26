@@ -19,12 +19,23 @@
 
 <style>
 	
+	/*Modifying link visuals*/
+	/*text-decoration: none will remove styling*/
+	a:link {text-decoration: none;}
+	a:visited {}
+	a:hover {}
+	a:active {}
+	
+	h2 {
+		
+	}
+	
 	.mainContainer {
 		max-width: 1280px;
 		/*Helps give visual to your structure*/
-		background-color: lightgray;
+		background-color: white;
 		margin: auto;
-		text-align: center;
+		text-align: left;
 	}
 	
 	.mainImage {
@@ -36,6 +47,82 @@
 		border-bottom-right-radius: 12px;
 	}
 	
+	.mainNav {
+		float: left;
+		width: 25%;
+		padding: 10px;
+		background-color: darkslategray;
+	}
+	
+	.mainTitle {
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		/*vw: varied width*/
+		font-size: 8vw;
+		color: white;
+		opacity: 0.7;
+		
+	}
+	
+	.mainContent {
+		float: left;
+		width: 75%;
+		padding-right: 50px;
+		margin-top: 40px;
+		
+	}
+	
+	.aside{
+		float: right;
+		margin-top: 90px;
+		width: 25%;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		
+	}
+	
+	.asideImage {
+		
+	}
+	
+	.cardImage {
+		width: 100%;
+		height: 30%;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+	
+	.cardContent {
+		padding: 2px 16px;
+		margin-top: 24px;
+		
+	}
+	
+	.cardButton {
+		background: #73AD21;
+		margin-bottom: 20px;
+		margin-left: 20px;
+		color: #FFFFFF;
+		font-weight: bold;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		padding-left: 14px;
+		width: 130px;
+		height: 35px;
+		align-content: center;
+		float: right;
+		
+	}
+	
+	.mainFooter {
+		float: left;
+		width: 100%;
+		padding: 10px;
+		background-color: darkslategray;
+		margin-top: 40px;
+	}
+	
 	
 	
 </style>	
@@ -44,30 +131,53 @@
 
 <body>
 	
-<!-- MAIN PAGE CONTAINER -->
-	
+<!-- MAIN PAGE CONTAINER (avoid using word container)-->
 <div class="mainContainer">
-MAIN CONTAINER
+	
 <!-- NAVIGATION -->
-<div>NAV</div>
+<div>
+	
+	<div class="mainNav"><a href="www.google.com">HOME</a></div>
+	<div class="mainNav">ABOUT</div>
+	<div class="mainNav">ARCHITECTURE</div>
+	<div class="mainNav">CONTACT</div>
+	
+</div>
 	
 <!-- IMAGE & HEADER -->
 <div>
 	<img src="images/HiFi.jpg" alt="Hi-Fi Rush Cover Art" class="mainImage">
+	<!-- div vs span: div fills spaces that are available to fill. span container object that doesn't require a block-level component -->
+	<span class="mainTitle">Hi-Fi Rush</span>
 	
-	</div>
+</div>
 	
 <!-- MAIN CONTENT -->
-<div>MAIN CONTENT</div>
+<div class="mainContent">
+	<h2>History of Hi-Fi Rush</h2>
+	<p>Hi-Fi Rush is a 2023 rhythm-based action game[1] developed by Tango Gameworks, originally published by Bethesda Softworks, and currently published by Krafton. The game's story follows self-proclaimed "future rock star" Chai (voiced by Robbie Daymond in English and Hiro Shimono in Japanese),[2][3] whose music player is accidentally embedded in his chest during experimental cybernetic surgery funded by the corrupt Vandelay Technologies, allowing him to rhythmically fight and re-perceive the world through environmental synesthesia. Labelled a "defect" and hunted by the corporation that transformed him, Chai bands together with new friends to defeat the company's executives and put a stop to their plans.</p>
+	<p>Hi-Fi Rush's gameplay sets itself apart from other examples in the character action genre. Chai's relationship with his music player causes himself, surrounding enemies and environmental objects to move in sync with the beat of the game's soundtrack. Combat entails successfully connecting 'beat hits' by chaining attacks together in time with the music, being rewarded with higher damage output and end-level ranking if players successfully manage to do so. In addition to the character action gameplay, the title features numerous rhythm-based minigames that leverage the game's audio cues for on-screen interactions and puzzles. Progression takes place across multiple linear stages that mix platforming segments and arena-like encounters with enemies and minibosses, while being bookended by a themed boss fight with the corporation's various executives. Chai can additionally be equipped with upgrades and additional moves that are unlocked procedurally through in-game collectibles or currency put towards them. The game's soundtrack encompasses licensed music from bands such as The Black Keys and Nine Inch Nails.[4]</p>
+	
+</div>
 	
 <!-- SECONDARY CONTENT -->
-<div>SECONDARY</div>
+<div class="aside">
+	<div class="asideImage"><img class="cardImage" src="images/image3.jpg" alt="..."></div>
+	<div class="cardContent">
+	<p>Hi-Fi Rush received critical acclaim upon release, with critics praising its visual style, art direction, humor, characters, and combat, though some noted its repetition, level design, and limited soundtrack.</p>
+	</div>
+	<div>
+		<div class="cardButton">Learn More</div>
+	</div>
+</div>
 	
 <!-- TERTIARY CONTENT -->
 <div>TERTIARY</div>
 	
 <!-- FOOTER -->
-<div>FOOTER</div>
+<div class="mainFooter">
+	This is the footer!!
+</div>
 	
 	
 	
