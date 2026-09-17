@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+	
+<meta charset="utf-8">
+<meta name="Keywords" content="HTML, CSS, Javascript">
+<meta name="Description" content="This is the page description!">
+<meta name="author" content="Sophia">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grids_Intro</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css.map">
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- CSS File which will be referenced in -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<style>
+	
+	/* GRID SYSTEM */
+	div.col, div.col-1, div.col-2, div.col-3, div.col-4, div.col-5, div.col-6, div.col-7, div.col-8, div.col-9, div.col-10, div.col-11, div.col-12 {
+		padding-top: 0.75rem;
+		padding-bottom: -.75rem;
+		background-color: darkolivegreen;
+		/*border: 1px solid rgba(86, 61, 124, 0.2); */
+	}
+	
+	
+	/* CLASSES*/
+	.spacerDiv {
+		height: 40px;
+	}
+	
+	.mainImage {
+		width: 100%;
+		
+	}
+	
+	.mainLogo {
+		height: 25px;
+	}
+	
+	
+	
+</style>
+	
+</head>
+
+<body>
+<!-- XS < 576, SM >= 576, M >= 768, LG >= 992, XL >= 1200-->
+<!-- BASIC GRID -->
+<!-- only need 1 container class, but you MUST have this class, must have container, row, and col -->
+	
+<!-- THIS IS FOR REFERENCE ONLY - DELETE WHEN FINISHED 
+	<div class="container">
+	
+		<div class="row">
+			<div class="col">1</div>
+			<div class="col">2</div>
+			<div class="col">3</div>
+			<div class="col">4</div>
+			<div class="col">5</div>
+			<div class="col">6</div>
+			<div class="col">7</div>
+			<div class="col">8</div>
+			<div class="col">9</div>
+			<div class="col">10</div>
+			<div class="col">11</div>
+			<div class="col">12</div>
+		
+		</div>
+	</div>
+	
+<div class="spacerDiv">&nbsp;</div>-->
+	
+<!-- PAGE GRID - THIS IS THE RIGHT WAY FOR A GRID -->	
+	<div class="container">
+		<!-- NAV -->
+		<div class="row">
+			<div class="col-4">
+				<img src="images/logo.png" class="mainLogo" alt="...">
+			</div>
+			<div class="col">HOME</div>
+			<div class="col">DISCOVERY</div>
+			<div class="col">ABOUT</div>
+			<div class="col">HELP</div>
+		</div>
+			
+		
+		<!-- HEADER -->
+		<div class="row">
+			<div class="col-12">
+			
+				<img src="images/heroNew.jpg" class="mainImage" alt="...">
+			
+			</div>
+		</div>
+		
+			
+		<!-- MAIN CONTENT -->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-5">MAIN LEFT</div>
+			<div class="col-5">MAIN RIGHT</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+			
+			
+		<!-- SECONDARY CONTENT -->
+		<div class="row">
+			<div class="col-3">CARD</div>
+			<div class="col-3">CARD</div>
+			<div class="col-3">CARD</div>
+			<div class="col-3">CARD</div>
+		</div>
+			
+			
+			
+		<!-- FOOTER -->
+		<div class="row">
+			<div class="col-3">FOOTER LEFT</div>
+			<div class="col-6">FOOTER CENTER</div>
+			<div class="col-3">FOOTER RIGHT</div>
+		</div>
+			
+		
+		
+		
+	</div>
+	
+	
+
+	
+</body>
+</html>
