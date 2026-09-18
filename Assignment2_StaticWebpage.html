@@ -19,14 +19,126 @@
 	
 	
 <style>
+	
+	/* BODY OF WEBPAGE */
+	body{
+		background-color: white;
+		max-width: 1280px;
+		margin: 0 auto;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"
+		
+		
+	}
+	
+	
+	/* NAV TEXT */
+	h1 {
+		font-size: 16px;
+		font-weight: bolder;
+		text-align: center;
+		color: #0290C0;
+	}
+	/* TITLE TEXT */
+	h2 {
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+	}
+	/* EXAMPLE TEXT */
+	h3 {
+		font-size: 24px;
+	}
+	/*BOTTOM NAV TEXT*/
+	h4 {
+		font-size: 16px;
+		font-weight: bolder;
+		text-align: left;
+		color: #0290C0;
+	}
+	
+	/* PARAGRAPH TEXT */
+	p {
+		font-size: 18px;
+	}
+	
+	
 	/* GRID SYSTEM */
 	div.col, div.col-1, div.col-2, div.col-3, div.col-4, div.col-5, div.col-6, div.col-7, div.col-8, div.col-9, div.col-10, div.col-11, div.col-12 {
-		padding-top: 0.75rem;
-		padding-bottom: -.75rem;
-		background-color: lightgray;
+		padding: 0px;
+		background-color: white;
 		border: 1px solid rgba(86, 61, 124, 0.2);
 	}
 		
+	
+	
+	/* CLASSES*/
+	.spacerDiv {
+		height: 80px;
+	}
+	
+	
+	.smallSpacer {
+		height: 20px;
+	}
+	
+	
+	.navBarSpacer {
+		background: white;
+		padding: 16px;
+	}
+	
+	
+	.mainLogo {
+		width: 60%;
+	}
+	
+	
+	.heroImage {
+		width: 100%;
+		height: 500px;
+		object-fit: cover;
+		padding: 0px;
+	}
+	
+	.imageStyle {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		padding: 0px;
+	}
+	
+	.mainText1 {
+		padding-left: 20px;
+	}
+	
+	.mainText2 {
+		padding-right: 20px;
+	}
+	
+	.cardStyle {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.cardImage {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	
+	.cardBody {
+		width: 100%;
+		height: 100px;
+		padding: 12px;
+		text-align: justify;
+	}
+	
+	
+	.footerInfoTitle {
+		text-align: right;
+	}
+	
+	
 	
 	
 </style>	
@@ -38,48 +150,194 @@
 <!-- PAGE GRID - THIS IS THE RIGHT WAY FOR A GRID -->	
 	<div class="container">
 		<!-- NAV -->
-		<div class="row">
-			<div class="col-4">LOGO</div>
-			<div class="col">HOME</div>
-			<div class="col">DISCOVERY</div>
-			<div class="col">ABOUT</div>
-			<div class="col">HELP</div>
+		<div class="row navBarSpacer sticky-lg-top">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-4">
+				<img src="images/Assignment_2/logoSeriousGames.png" class="mainLogo" alt="...">
+			</div>
+			<div class="col-2">
+				<h1>ABOUT</h1>
+			</div>
+			<div class="col-2">
+				<h1>EXAMPLES</h1>
+			</div>
+			<div class="col-2">
+				<h1>LEARN MORE</h1>
+			</div>
+			<div class="col-1">&nbsp;</div>
 		</div>
 			
 		
 		<!-- HEADER -->
 		<div class="row">
-			<div class="col-12">MAIN IMAGE</div>
+			<div class="col-12">
+				<img src="images/Assignment_2/heroImage.jpg" class="heroImage" alt="...">
+			</div>
 		</div>
 		
-			
-		<!-- MAIN CONTENT -->
+		<div class="spacerDiv"></div>
+		
+		<!-- MAIN CONTENT TITLE-->
 		<div class="row">
 			<div class="col-1">&nbsp;</div>
-			<div class="col-5">MAIN LEFT</div>
-			<div class="col-5">MAIN RIGHT</div>
+			<div class="col-10">
+				<h2>WHAT ARE SERIOUS GAMES?</h2>
+			</div>
 			<div class="col-1">&nbsp;</div>
 		</div>
-			
-			
-		<!-- SECONDARY CONTENT -->
+		
+		<div class="smallSpacer"></div>
+		
+		<!-- MAIN CONTENT ROW 1-->
 		<div class="row">
-			<div class="col-3">CARD</div>
-			<div class="col-3">CARD</div>
-			<div class="col-3">CARD</div>
-			<div class="col-3">CARD</div>
+			<div class="col-1">&nbsp;</div>
+			<div class="col-4">
+				<img src="images/Assignment_2/image1.jpg" class="imageStyle" alt="...">
+			</div>
+			<div class="col-6">
+				<p class="mainText1">Serious games are a broad category that can span a range of genres, platforms, and purposes. Serious games is a term coined by Clark Abt in 1970, defined as “...purpose-driven playful environments intended to impact the players beyond the self-contained aim of the game. Serious game design is based on their purpose, their mechanics and rule-sets, fiction and narrative, their aesthetics and framing and their content” (Abt, 1970). It is important to compare and contrast serious games, simulation games, and digital game-based learning in order to understand the unique stance serious games take in the fields of education and design.</p>
+			</div>
+			<div class="col-1">&nbsp;</div>
 		</div>
-			
-			
-			
-		<!-- FOOTER -->
+		
+		<div class="smallSpacer"></div>
+		
+		<!-- MAIN CONTENT ROW 2-->
 		<div class="row">
-			<div class="col-3">FOOTER LEFT</div>
-			<div class="col-6">FOOTER CENTER</div>
-			<div class="col-3">FOOTER RIGHT</div>
+			<div class="col-1">&nbsp;</div>
+			<div class="col-6">
+				<p class="mainText2">Serious games are a broad category that can span a range of genres, platforms, and purposes. Serious games is a term coined by Clark Abt in 1970, defined as “...purpose-driven playful environments intended to impact the players beyond the self-contained aim of the game. Serious game design is based on their purpose, their mechanics and rule-sets, fiction and narrative, their aesthetics and framing and their content” (Abt, 1970). It is important to compare and contrast serious games, simulation games, and digital game-based learning in order to understand the unique stance serious games take in the fields of education and design.</p>
+			</div>
+			<div class="col-4">
+				<img src="images/Assignment_2/image2.jpg" class="imageStyle" alt="...">
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<div class="spacerDiv"></div>
+		
+		<!-- SECONDARY CONTENT TITLE-->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-10">
+				<h2>EXAMPLES OF SERIOUS GAMES</h2>
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<div class="smallSpacer"></div>
+		
+		<!-- SECONDARY CONTENT TITLE-->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-2">
+				<div class="card cardStyle">
+  					<img src="images/Assignment_2/exElude.png" class="cardImage" alt="...">
+  					<div class="cardBody">
+    					<h5 class="card-title">Elude</h5>
+  						 <a href="#" class="btn btn-primary">Go somewhere</a>
+  					</div>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="card cardStyle">
+  					<img src="images/Assignment_2/exFoldIt.jpg" class="cardImage" alt="...">
+  					<div class="cardBody">
+    					<h5 class="card-title">FoldIt</h5>
+  						 <a href="#" class="btn btn-primary">Go somewhere</a>
+  					</div>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="card cardStyle">
+  					<img src="images/Assignment_2/exFoodForce.jpg" class="cardImage" alt="...">
+  					<div class="cardBody">
+    					<h5 class="card-title">Food Force</h5>
+  						 <a href="#" class="btn btn-primary">Go somewhere</a>
+  					</div>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="card cardStyle">
+  					<img src="images/Assignment_2/exOpenAxis.jpg" class="cardImage" alt="...">
+  					<div class="cardBody">
+    					<h5 class="card-title">Open Axis</h5>
+  						 <a href="#" class="btn btn-primary">Go somewhere</a>
+  					</div>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="card cardStyle">
+  					<img src="images/Assignment_2/exStopDisasters.jpg" class="cardImage" alt="...">
+  					<div class="cardBody">
+    					<h5 class="card-title">Stop Disasters</h5>
+  						 <a href="#" class="btn btn-primary">Go somewhere</a>
+  					</div>
+				</div>
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+				
+		<div class="spacerDiv"></div>
+			
+		<!-- FOOTER ROW 1 -->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">
+				<img src="images/Assignment_2/logoSeriousGames.png" class="mainLogo" alt="...">
+			</div>
+			<div class="col-8">&nbsp;</div>
+		</div>
+		
+		<!-- FOOTER ROW 2 -->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">&nbsp;</div>
+			<div class="col-7">
+				<h3 class="footerInfoTitle">Sources</h3>
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<!-- FOOTER ROW 3 -->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">
+				<h4>ABOUT</h4>
+			</div>
+			<div class="col-7">
+				<p class="footerInfoTitle">Source 1</p>
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<!-- FOOTER ROW 4 -->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">
+				<h4>EXAMPLES</h4>
+			</div>
+			<div class="col-7">
+				<p class="footerInfoTitle">Source 2</p>
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<!-- FOOTER ROW 5 -->
+		<div class="row">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">
+				<h4>LEARN MORE</h4>
+			</div>
+			<div class="col-7">
+				<p class="footerInfoTitle">Source 3</p>
+			</div>
+			<div class="col-1">&nbsp;</div>
 		</div>
 			
 		
+		<div class="spacerDiv"></div>
+
 		
 		
 	</div>
