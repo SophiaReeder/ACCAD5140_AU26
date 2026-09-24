@@ -31,14 +31,6 @@
 	}
 	
 	
-	/* NAV TEXT */
-	h1 {
-		font-size: 16px;
-		font-weight: bolder;
-		text-align: center;
-		padding-top: 8px;
-		color: #0290C0;
-	}
 	/* TITLE TEXT */
 	h2 {
 		font-size: 24px;
@@ -103,10 +95,23 @@
 		background: white;
 	}
 	
+	.blueBG {
+		background: #E4F6FB;
+	}
+	
 	
 	.navBarSpacer {
 		background: white;
 		padding: 16px;
+	}
+	
+	.navButtons {
+		background: #0290C0;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		font-size: 16px;
+		font-weight: bolder;
+		color: white;
+		width: 96%;
 	}
 	
 	
@@ -160,6 +165,7 @@
 		width: 94%;
 		height: 100%;
 		border: #0290C0;
+		text-align: center;
 	}
 	
 	.cardImage {
@@ -172,7 +178,26 @@
 		width: 100%;
 		height: 100px;
 		padding: 8px;
-		text-align: right;
+		text-align: center;
+	}
+	
+	.cardButtons {
+		background: #0290C0;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		font-size: 14px;
+		font-weight: bolder;
+		color: white;
+		width: 80%;
+	}
+	
+	.cardText {
+		text-align: center;
+		font-size: 20px;
+	}
+	
+	.fillTitle {
+		background: #0290C0;
+		color: white;
 	}
 	
 	.footerLogo {
@@ -210,16 +235,16 @@
 		<div class="row navBarSpacer sticky-lg-top">
 			<div class="col-1">&nbsp;</div>
 			<div class="col-4">
-				<img src="images/Assignment_2/logoSeriousGames.png" class="mainLogo" alt="...">
+				<img src="images/Assignment_2/logoSeriousGames.png" class="mainLogo" alt="Playful pink letters rests to the right of a yellow game controller icon, reading: Serious Games.">
 			</div>
 			<div class="col-2">
-				<h1>ABOUT</h1>
+				<button type="button" class="btn btn-primary navButtons">ABOUT</button>
 			</div>
 			<div class="col-2">
-				<h1>EXAMPLES</h1>
+				<button type="button" class="btn btn-primary navButtons">EXAMPLES</button>
 			</div>
 			<div class="col-2">
-				<h1>LEARN MORE</h1>
+				<button type="button" class="btn btn-primary navButtons">LEARN MORE</button>
 			</div>
 			<div class="col-1">&nbsp;</div>
 		</div>
@@ -228,7 +253,7 @@
 		<!-- HEADER -->
 		<div class="row">
 			<div class="col-12">
-				<img src="images/Assignment_2/heroImage.jpg" class="heroImage" alt="...">
+				<img src="images/Assignment_2/heroImage.jpg" class="heroImage" alt="In a paper cut-out style, an abstract form of a human silhouette rests on a blue background. A brain that turns into a plug is on top of it.">
 			</div>
 		</div>
 		
@@ -249,7 +274,7 @@
 		<div class="row">
 			<div class="col-1 whiteBG">&nbsp;</div>
 			<div class="col-4">
-				<img src="images/Assignment_2/image1.jpg" class="imageStyle1" alt="...">
+				<img src="images/Assignment_2/image1.jpg" class="imageStyle1" alt="People sit around a table laughing. They are playing a card game.">
 			</div>
 			<div class="col-6">
 				<p class="mainText1">Serious games are a broad category that can span a range of genres, platforms, and purposes. Serious games is a term coined by Clark Abt in 1970, defined as “...purpose-driven playful environments intended to impact the players beyond the self-contained aim of the game. Serious game design is based on their purpose, their mechanics and rule-sets, fiction and narrative, their aesthetics and framing and their content” (Abt, 1970). It is important to compare and contrast serious games, simulation games, and digital game-based learning in order to understand the unique stance serious games take in the fields of education and design.</p>
@@ -266,7 +291,7 @@
 				<p class="mainText2">Few studies on serious games have looked at what knowledge is retained after a delayed period of time. Those that have learned that when comparing a game learning condition with a traditional learning condition, post-test scores remain similar in terms of instant recall, but through a delayed retention test, there is an increase in scores from the game condition (Luna et al., 2026, Wang et al., 2024). This indicates game designers should consider the variable of time in their work. This also pairs well with the concept of scaffolding, as time plays a factor in how much help the player is afforded in a given play session. What would happen if designers took into account knowledge retention theories, like repetitive and spaced out studying, and applied these concepts in an environment?</p>
 			</div>
 			<div class="col-4">
-				<img src="images/Assignment_2/image2.jpg" class="imageStyle2" alt="...">
+				<img src="images/Assignment_2/image2.jpg" class="imageStyle2" alt="People sit on a couch, holding video game controllers.">
 			</div>
 			<div class="col-1 whiteBG">&nbsp;</div>
 		</div>
@@ -289,46 +314,46 @@
 			<div class="col-1">&nbsp;</div>
 			<div class="col-2">
 				<div class="card cardStyle">
-  					<img src="images/Assignment_2/exElude.png" class="cardImage" alt="...">
+  					<img src="images/Assignment_2/exElude.png" class="cardImage" alt="I boy is standing on a branch. The style is 2D and cartoonish.">
   					<div class="cardBody">
-    					<h5 class="card-title">Elude</h5>
-  						 <a href="https://gambit.mit.edu/loadgame/elude.php" target="_blank" class="btn btn-primary">Learn More</a>
+    					<h5 class="card-title cardText">Elude</h5>
+  						 <a href="https://gambit.mit.edu/loadgame/elude.php" target="_blank" class="btn btn-primary cardButtons">Learn More</a>
   					</div>
 				</div>
 			</div>
 			<div class="col-2">
 				<div class="card cardStyle">
-  					<img src="images/Assignment_2/exFoldIt.jpg" class="cardImage" alt="...">
+  					<img src="images/Assignment_2/exFoldIt.jpg" class="cardImage" alt="A piece od DNA is shown.">
   					<div class="cardBody">
-    					<h5 class="card-title">FoldIt</h5>
-  						 <a href="https://fold.it/" target="_blank" class="btn btn-primary">Learn More</a>
+    					<h5 class="card-title cardText">FoldIt</h5>
+  						 <a href="https://fold.it/" target="_blank" class="btn btn-primary cardButtons">Learn More</a>
   					</div>
 				</div>
 			</div>
 			<div class="col-2">
 				<div class="card cardStyle">
-  					<img src="images/Assignment_2/exFoodForce.jpg" class="cardImage" alt="...">
+  					<img src="images/Assignment_2/exFoodForce.jpg" class="cardImage" alt="Two people stand in front of a helicopter, mission ready.">
   					<div class="cardBody">
-    					<h5 class="card-title">Food Force</h5>
-  						 <a href="https://www.solutions-site.org/node/639" target="_blank" class="btn btn-primary">Learn More</a>
+    					<h5 class="card-title cardText">Food Force</h5>
+  						 <a href="https://www.solutions-site.org/node/639" target="_blank" class="btn btn-primary cardButtons">Learn More</a>
   					</div>
 				</div>
 			</div>
 			<div class="col-2">
 				<div class="card cardStyle">
-  					<img src="images/Assignment_2/exOpenAxis.jpg" class="cardImage" alt="...">
+  					<img src="images/Assignment_2/exOpenAxis.jpg" class="cardImage" alt="A character is walking through a library, represented in a pixel art style.">
   					<div class="cardBody">
-    					<h5 class="card-title">Open Axis</h5>
-  						 <a href="https://crln.acrl.org/index.php/crlnews/article/view/25155/33016" target="_blank" class="btn btn-primary">Learn More</a>
+    					<h5 class="card-title cardText">Open Axis</h5>
+  						 <a href="https://crln.acrl.org/index.php/crlnews/article/view/25155/33016" target="_blank" class="btn btn-primary cardButtons">Learn More</a>
   					</div>
 				</div>
 			</div>
 			<div class="col-2">
 				<div class="card cardStyle">
-  					<img src="images/Assignment_2/exStopDisasters.jpg" class="cardImage" alt="...">
+  					<img src="images/Assignment_2/exStopDisasters.jpg" class="cardImage" alt="A three quarter view shows a grid environment by a body of water.">
   					<div class="cardBody">
-    					<h5 class="card-title">Stop Disasters</h5>
-  						 <a href="https://www.stopdisastersgame.org/" target="_blank" class="btn btn-primary">Learn More</a>
+    					<h5 class="card-title cardText">Stop Disasters</h5>
+  						 <a href="https://www.stopdisastersgame.org/" target="_blank" class="btn btn-primary cardButtons">Learn More</a>
   					</div>
 				</div>
 			</div>
@@ -336,12 +361,27 @@
 		</div>
 				
 		<div class="spacerDiv"></div>
+		
+		<!-- TERTIARY INFO ROW -->
+		<div class="row blueBG">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">
+				<span class="input-group-text fillTitle" id="addon-wrapping">What's Your Favorite Serious Game?</span>
+  				
+			</div>
+			<div class="col-7">
+				<input type="text" class="form-control" placeholder="Game Title" aria-label="Game Title" aria-describedby="addon-wrapping">
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<div class="spacerDiv"></div>
 			
 		<!-- FOOTER ROW 1 -->
 		<div class="row footerHeader">
 			<div class="col-1">&nbsp;</div>
 			<div class="col-3">
-				<img src="images/Assignment_2/logoSeriousGames.png" class="footerLogo" alt="...">
+				<img src="images/Assignment_2/logoSeriousGames.png" class="footerLogo" alt="Playful pink letters rests to the right of a yellow game controller icon, reading: Serious Games.">
 			</div>
 			<div class="col-8">&nbsp;</div>
 		</div>
@@ -351,7 +391,6 @@
 			<div class="col-1">&nbsp;</div>
 			<div class="col-3">&nbsp;</div>
 			<div class="col-7">
-				<h5 class="footerInfoTitle">SOURCES</h5>
 			</div>
 			<div class="col-1">&nbsp;</div>
 		</div>
@@ -362,9 +401,7 @@
 			<div class="col-3">
 				<h4>ABOUT</h4>
 			</div>
-			<div class="col-7">
-				<h5 class="footerInfoTitle">Abt, C. C. (1975) Serious Games. New York: Viking Compass.</h5>
-			</div>
+			<div class="col-7"></div>
 			<div class="col-1">&nbsp;</div>
 		</div>
 		
@@ -375,7 +412,7 @@
 				<h4>EXAMPLES</h4>
 			</div>
 			<div class="col-7">
-				<h5 class="footerInfoTitle">Luna, A. J. H. D. O., Silva, A. E. D., Albuquerque, E. G. D. M., Lira, K. G., & Lima, F. F. D. (2026). Comparing serious games and teaching cases for engaging minds and fostering long-term learning in project management: a controlled trial. Behaviour & Information Technology, 1–20. https://doi.org/10.1080/0144929X.2026.2651119</h5>
+				<h5 class="footerInfoTitle">SOURCES</h5>
 			</div>
 			<div class="col-1">&nbsp;</div>
 		</div>
@@ -387,7 +424,29 @@
 				<h4>LEARN MORE</h4>
 			</div>
 			<div class="col-7">
-				<h5 class="footerInfoTitle">Wang, L., Zhao, Q., Dong, L., Zhao, H., Qin, L., Deng, T., Huang, H., Li, M., Wu, X., & Liu, J. (2024). The effectiveness of serious games on undergraduate nursing students’ knowledge and skills: A systematic review and meta-analysis. Nurse Education in Practice, 80, Article 104102. https://doi.org/10.1016/j.nepr.2024.104102</h5>
+				<h5 class="footerInfoTitle">Abt, C. C. (1975) Serious Games. New York: Viking Compass.</h5>
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<!-- FOOTER ROW 6 -->
+		<div class="row footerBody">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">
+			</div>
+			<div class="col-7">
+				<h5 class="footerInfoTitle">Luna, A. J. H. D. O., Silva, A. E. D., Albuquerque, E. G. D. M., Lira, K. G., [&] Lima, F. F. D. (2026). Comparing serious games and teaching cases for engaging minds and fostering long-term learning in project management: a controlled trial. Behaviour [&] Information Technology, 1–20. https://doi.org/10.1080/0144929X.2026.2651119</h5>
+			</div>
+			<div class="col-1">&nbsp;</div>
+		</div>
+		
+		<!-- FOOTER ROW 7 -->
+		<div class="row footerBody">
+			<div class="col-1">&nbsp;</div>
+			<div class="col-3">
+			</div>
+			<div class="col-7">
+				<h5 class="footerInfoTitle">Wang, L., Zhao, Q., Dong, L., Zhao, H., Qin, L., Deng, T., Huang, H., Li, M., Wu, X., [& Liu, J. (2024). The effectiveness of serious games on undergraduate nursing students’ knowledge and skills: A systematic review and meta-analysis. Nurse Education in Practice, 80, Article 104102. https://doi.org/10.1016/j.nepr.2024.104102</h5>
 			</div>
 			<div class="col-1">&nbsp;</div>
 		</div>
