@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="Keywords" content="HTML, CSS, Javascript">
+<meta name="Description" content="This is the page description!">
+<meta name="author" content="Sophia">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<title>Assignment2_StaticWebPage</title>
+	
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css.map">
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- CSS File which will be referenced in -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+	
+<style>
+</style>
+	
+	
+	
+</head>
+	
+<body>
+	
+<!-- INLINE JS (GOES INTO THE BODY)-->
+<!-- NO LIMIT ON SCRIPT TAGS -->
+<script>
+// COMMENT
+	
+// variables
+	// OLD - DO NOT USE
+		//var myVar = "This is my variable";
+		//var myInt = 89;
+	
+	// NEW - USE
+	// if it changes, declare as let
+	// if it won't change, declare as const
+	let myVar_1 = "Hello";
+	const myVar_2 = " World";
+	let myVar_3 = myVar_1 + myVar_2;
+	
+	//capture output or return
+		//alert(myVar_3);
+	
+	//showing what the code is doing
+	console.log(myVar_1 + myVar_2);
+	
+// operators
+	let result = 5 > 4;
+	//alert(result);
+	
+	let num1 = 5;
+	let num2 = 4;
+	let numEval = num1 > num2;
+	//alert(numEval);
+	console.log(numEval);
+	
+	// conditional
+		//only add () to else if you have something to put there
+	let Var4 = 12;
+	
+	if (Var4 == 4) {
+		console.log("Var4 == 4");
+		} else {
+		console.log("Var4 != 4");
+	}
+	
+	// loop
+		// for "as long as" something is true
+		// defining a var, the value of the var (starting at 0)
+		// as long as it's <=5, increment the var
+	for (let i = 0; i<=5; i++) {
+		console.log(i);
+	}
+	
+	// array
+	let color = ["red", "yellow", "green", "blue"];
+	console.log("The color is " + color[1]);
+	
+	// function
+	function addingNum() {
+		let answer = (10 + 10);
+		console.log("The answer is " + answer);
+	}
+	//call function
+	addingNum();
+	
+	
+	
+</script>
+	
+	
+	
+	
+</body>
+</html>
