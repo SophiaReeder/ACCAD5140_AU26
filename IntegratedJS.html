@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="Keywords" content="HTML, CSS, Javascript">
+<meta name="Description" content="This is the page description!">
+<meta name="author" content="Sophia">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<title>js-Integrated</title>
+	
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css.map">
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- CSS File which will be referenced in -->
+<script src="js/bootstrap.bundle.min.js"></script>
+	
+	
+<style>
+	
+	.spacerDiv {
+		height: 80px;
+	}
+	
+	
+	#hiddenImage {
+		width: 200px;
+		display: hidden;
+	}
+	
+	body{
+		font-family: Arial, sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: #eeeeee;
+	}
+	
+	.score-card {
+		background-color: white;
+		padding: 40px;
+		border-radius: 12px;
+		text-align: center;
+		width: 300px;
+	}
+	
+	.high-score {
+		background-color: lightgreen;
+	}
+	
+	#score {
+		font-size: 60px;
+		font-weight: bold;
+	}
+	
+	#button {
+		padding: 10px, 20px;
+		margin: 5px;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+	}
+	
+	#addButton {
+		background-color: navy;
+		color: white;
+	}
+	
+	#resetButton {
+		background-color: lightgray;
+	}
+	
+	
+</style>	
+
+	
+<script>
+	
+// DOM EX: 1 JS DATE
+	
+//inner html is what's inside the tag
+//document.getElementById will call and execute what was put in HTML
+function findDate() {
+	document.getElementById("clock").innerHTML = Date();
+}
+	
+	
+	
+//DOM EX: 2 BACKGROUND COLOR OF DIV
+	
+//style accesses the css
+function findDiv() {
+	document.getElementById("id1").style.backgroundColor = 'red';
+}
+	
+
+	
+//DOM EX: 3 REPLACE <p> W/ EXSISTING HTML HEADING
+function addNewHeading() {
+	const newHeading = document.createElement("h1");
+	newHeading.textContent = "New Heading";
+	const exsistingHeading = document.getElementById("heading");
+	
+	if (exsistingHeading) {
+		exsistingHeading.parentNode.replaceChild(newHeading, exsistingHeading);
+		}
+}
+	
+//DOM EX: 4 REVEAL HIDDEN OBJECT
+	
+let isImageVisible = false;	
+	
+function toggleImage() {
+	const myHiddenImage = document.getElementById("hiddenImage");
+	
+	if (isImageVisible) {
+		myHiddenImage.style.display = "none";
+	} else {
+		myHiddenImage.style.display = "block";
+	}
+	
+	isImageVisible = !isImageVisible;
+}
+	
+	
+	
+//DOM EX: 5 SCORE TRACKER
+
+	
+	
+
+	
+	
+</script>
+	
+	
+	
+	
+</head>
+
+<body>
+	
+	<div class= "spacerDiv">&nbsp;</div>
+	<!-- DOM EX: 1 JS DATE -->
+	<button type="button" onClick="findDate()">Display Date and Time</button>
+	<p id="clock"></p>
+	
+	
+	<div class="spacerDiv"></div>
+	<!-- DOM EX: 2 BACKGROUND COLOR OF DIV -->
+	<button type="button" onClick="findDiv()">Find My Div</button>
+	<div id="id1">&nbsp;</div>
+	
+	
+	<div class="spacerDiv"></div>
+	<!-- DOM EX: 3 REPLACE <p> W/ EXSISTING HTML HEADING  -->
+	<button type="button" onClick="addNewHeading">Add A Heading</button>
+	<p id="heading"></p>
+	
+	
+	<div class="spacerDiv"></div>
+	<!-- DOM EX: 4 REVEAL HIDDEN OBJECT  -->
+	<button type="button" onClick="toggleImage">Toggle Image</button>
+	<img id="hiddenImage" src="images/rose.jpg" alt="HiddenImage">
+	
+	
+	<div class="spacerDiv"></div>
+	<!-- DOM EX: 5 SCORE TRACKER  -->
+	<div class="score-card">
+	<h1>Score Tracker</h1>
+	<p id="score">0</p>
+	<button id="addButton">Add Point</button>
+	<button id="resetButton">Reset</button>
+	</div>
+	
+	<script>
+	
+		class ScoreTracker {
+			constructor() {
+				this.score = 0;
+				this.scoreDisplay = document.getElementById("score");
+				this.card = document.querySelector(".score-card");
+			}
+			
+			//METHOD 1
+			addPoint() {
+				this.score++;
+				this.scoreDisplay.textContent = this.score;
+				if (this.score >= 10){
+					this.card.classlist.add("high-score");
+				}
+			}
+			
+			//METHOD 2
+			resetScore() {
+				this.score = 0;
+				this.scoreDisplay.textContent = this.score;
+				this.card.classList.remove("high-score")
+			}
+		}
+		
+		//CALL CLASS
+		const game = new ScoreTracker();
+		
+		document.getElementById("addButton").addEventListener("click", game.addPoint.bind(game));
+		document.getElementById("resetButton").addEventListener("click", game.resetScore.bind(game));
+		
+		
+		
+	</script>
+	
+
+	
+	
+	
+	
+	
+	
+</body>
+</html>
