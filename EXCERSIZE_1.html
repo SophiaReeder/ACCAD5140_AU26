@@ -15,70 +15,124 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <!-- CSS File which will be referenced in -->
 <script src="js/bootstrap.bundle.min.js"></script>
+	
 <style>
-</style>	
+	
+	/* BODY OF WEBPAGE */
+	body{
+		background-color: #000000;
+		max-width: 1280px;
+		margin: 0 auto;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif;
+	}
+	
+	h2 {
+		margin: 40px;
+		color: white;
+		text-align: center;
+		font-style: italic;
+	}
+	
+	.spacerDiv {
+		height: 80px;
+	}
+	
+	.myImage {
+		align-content: center;
+		padding-left: 400px;
+		padding-right: 400px;
+		height: 400px;
+		width: 100%;
+		transform: scaleX(-1);
+		
+	}
+	
+</style>
+	
 </head>
 
 <body>
 	
-	<p>Take a look at the console!</p>
+	<div class="container">
+		<div class="row">
+			<div class="spacerDiv">&nbsp;</div>
+			<h2 class="p-2 theme-primary theme-contrast">Take a look at the console!</h2>
+		</div>
+		<div class="row">
+			<img src="images/cartoonMe.png" class="myImage" alt="...">
+		</div>
+	</div>
+	
 	
 <script>
 	//function that uses variables and operators for assignment or comparison
-	function checkNum() {
-            let myNumber = 15;
-            let threshold = 10;
-            let result;
+	//Should print in console as TRUE
+	function checkNumTrue() {
+            let myNumTrue = 15;
+            let ten = 10;
+            let resultA;
 
-            if (myNumber > threshold) {
-                result = "TRUE: " + myNumber + " is greater than " + threshold + "!";
+            if (myNumTrue > ten) {
+                resultA = "TRUE: " + myNumTrue + " is greater than " + ten + "!";
             } else {
-                result = "FALSE: " + myNumber + " is not greater than " + threshold + ".";
+                resultA = "FALSE: " + myNumTrue + " is not greater than " + ten + ".";
             }
-            console.log(result);
+            console.log(resultA);
         }
-	checkNum();
-	
+	checkNumTrue();
+	//Should print in console as FALSE
+	function checkNumFalse() {
+            let myNumFalse = 15;
+            let twentyfive = 25;
+            let resultB;
+
+            if (myNumFalse > twentyfive) {
+                resultB = "TRUE: " + myNumFalse + " is greater than " + twentyfive + "!";
+            } else {
+                resultB = "FALSE: " + myNumFalse + " is not greater than " + twentyfive + ".";
+            }
+            console.log(resultB);
+        }
+	checkNumFalse();
 	
 	
 	//function that uses control structures (conditionals, loops, arrays, etc.)
-	 function yummyFruits() {
-            let fruits = ["Apple, ", "Raspberries, ", "Blueberrues, ", "Mango, ", "Pinapple, ", "and Watermelon."];
-            let outputText = "Fruits: ";
-
-            for (let i = 0; i < fruits.length; i++) {
-                outputText += fruits[i] + " ";
-            }
-            console.log(outputText);
+	//should produce all words in array timeRhymes
+	let timeRhymes = ["Crime", "Prime", "Climb", "Lime", "Dime", "Mime", "Bedtime", "Daytime", "Paradigm", "Thyme", "Grime"];
+	
+	function silly() {
+		 for(let i = 0; i < timeRhymes.length; i++) {
+			console.log((i + 1) + ". " + timeRhymes[i]);
+		}
+            
         }
-	yummyFruits();
+	silly();
 	
 	
 	//function that does anything else
-	//practice classes
+	//class to be called in function
 	class VideoGame {
             constructor(title, genre, releaseYear) {
                 this.title = title;
                 this.genre = genre;
                 this.releaseYear = releaseYear;
             }
-
-            // A method within the class to calculate game details
-            getSummary() {
+            //game details
+            details() {
                 let currentYear = 2026;
                 let age = currentYear - this.releaseYear;
                 return this.title + " is a " + this.genre + " game released " + age + " years ago.";
             }
         }
-	
-	function showGameDetails() {
+	//what will actually print
+	function minecraft() {
             let favoriteGame = new VideoGame("Minecraft", "Sandbox", 2011);
             
-            let gameInfo = favoriteGame.getSummary();
+            let gameInfo = favoriteGame.details();
 
             console.log(gameInfo);
         }
-	showGameDetails();
+	minecraft();
 	
 	
 	
