@@ -9,7 +9,7 @@
 <meta name="author" content="Sophia">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-<title>Execise 2</title>
+<title>Exercise 2 - Sophia Reeder</title>
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/grid.css">
@@ -18,10 +18,252 @@
 <link rel="stylesheet" href="css/Class3_firstCSSPage.css">
 <script src="js/bootstrap.bundle.min.js"></script>
 	
+<style>
+	
+	h1 {
+		text-align: center;
+		
+	}
+		
+	body {
+		font-family: Arial, sans-serif;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background-color: #F4F4F9;
+		color: rgb(51, 51, 51);
+		margin: 0;
+		padding: 20px;
+	}
+	
+	.spacerDiv {
+		height: 40px;
+	}
+
+	.main-wrapper {
+		max-width: 1280px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.custom-card {
+		background-color: white;
+		padding: 30px;
+		border-radius: 12px;
+		align-content: center;
+		text-align: center;
+		width: 100%;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	}
+	
+	.dark-mode {
+		background-color: #222222;
+		color: #FFFFFF;
+	}
+
+	.badge-online {
+		background-color: #28a745;
+		color: white;
+		padding: 5px 10px;
+		border-radius: 12px;
+		font-size: 12px;
+		display: inline-block;
+		margin-top: 10px;
+	}
+	
+	button {
+		padding: 10px 18px;
+		margin: 5px;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	
+	.btn-primary-custom {
+		background-color: #561E95;
+		color: white;
+		width: 100%;
+	}
+	
+	.btn-secondary-custom {
+		background-color: #561E95;
+		color: white;
+		width: 100%;
+	}
+
+	#output-box {
+		width: 320px;
+		background: #FFFFFF;
+		border: 1px solid #FFFFFF;
+		padding: 15px;
+		border-radius: 8px;
+		margin-top: 15px;
+		font-size: 14px;
+	}
+		
+</style>	
 	
 	
+<script>
+	//Helper function to log return values directly onto the page
+	//Calling output function
+	function output(value) {
+		const logElement = document.getElementById("return-log");
+		if (logElement) {
+			logElement.textContent = value;
+		}
+	}
+
+	//FUNCTION 1: Changes CSS styling
+	//Use document.style
+	function theme() {
+		const card = document.getElementById("themeCard");
+		if (card.classList.contains("dark-mode")) {
+			card.classList.remove("dark-mode");
+			card.style.border = "1px solid #FFFFFF";
+		} else {
+			card.classList.add("dark-mode");
+			card.style.border = "2px solid #007BFF";
+		}
+
+		const themeMessage = "You toggled the theme!";
+		output(themeMessage);
+		console.log(themeMessage);
+	}
+
+	//FUNCTION 2: Replaces element
+	//Use document.replaceChild & document.createElement
+	function replaceGreeting() {
+		const newGreeting = document.createElement("h2");
+		newGreeting.id = "greetingText";
+		newGreeting.textContent = "Welcome Back, User!";
+		newGreeting.style.color = "#007BFF";
+
+		const existingGreeting = document.getElementById("greetingText");
+
+		if (existingGreeting && existingGreeting.parentNode) {
+			existingGreeting.parentNode.replaceChild(newGreeting, existingGreeting);
+		}
+
+		const replaceHeader = "You replaced the header!";
+		output(replaceHeader);
+		console.log(replaceHeader);
+	}
+
+</script>	
 </head>
+	
 
 <body>
+	
+	<!-- BOOTSTRAP GRID CONTAINER -->
+	<div class="container">
+		
+		<!-- HEADER ROW -->
+		<div class="row">
+			<div class="col-12">
+				<h1>Exercise 2</h1>
+			</div>
+		</div>
+		
+		<div class="spacerDiv">&nbsp;</div>
+
+		<!-- 2-COLUMN MAIN CONTENT GRID -->
+		<div class="row">
+			
+			<!-- COLUMN 1: ALL CONTROL BUTTONS -->
+			<div class="col-3">
+				<!-- DOM EX 1: REPLACE GREETING -->
+					<button type="button" class="btn-primary-custom" onClick="replaceGreeting()">Change Greeting Header</button>
+			</div>
+			<div class="col-3">
+				<!-- DOM EX 2: TOGGLE CARD STYLE -->
+					<button type="button" class="btn-secondary-custom" onClick="theme()">Toggle Card Theme</button>
+			</div>
+			<div class="col-3">
+				<!-- CLASS BUTTON 1: UPDATE NAME -->
+					<button id="updateNameBtn" class="btn-primary-custom">Random Name</button>
+			</div>
+			<div class="col-3">
+				<!-- CLASS BUTTON 2: TOGGLE STATUS BADGE -->
+					<button id="toggleStatusBtn" class="btn-secondary-custom">Toggle Badge</button>
+				</div>
+			</div>
+		
+		<div class="spacerDiv">&nbsp;</div>
+		
+		<div class="row">
+			<!-- COLUMN 2: INTERACTIVE CARD -->
+			<div class="col-12">
+				<div id="themeCard" class="custom-card">
+					<h3 id="greetingText">Welcome!!</h3>
+					<p id="userNameDisplay">You are in guest mode.</p>
+					<div id="badgeContainer"></div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<script>
+		// ASSIGNMENT ORIGINAL CLASS: Manipulates DOM with 2 unique methods
+		class ProfileCard {
+			constructor() {
+				this.nameElement = document.getElementById("userNameDisplay");
+				this.badgeContainer = document.getElementById("badgeContainer");
+				this.isOnline = false;
+				this.names = ["Claire Redfield", "Leon Kennedy", "Ada Wong", "Ashley Grahm"];
+				this.nameIndex = 0;
+			}
+
+			// CLASS METHOD 1: Updates text content dynamically
+			updateName() {
+				this.nameIndex = (this.nameIndex + 1) % this.names.length;
+				this.nameElement.textContent = "User: " + this.names[this.nameIndex];
+
+				return "Class Method 1 (updateName) executed: Name changed to " + this.names[this.nameIndex];
+			}
+
+			// CLASS METHOD 2: Adds/Removes DOM elements directly via createElement & removeChild
+			toggleStatus() {
+				this.isOnline = !this.isOnline;
+
+				if (this.isOnline) {
+					const badge = document.createElement("span");
+					badge.id = "statusBadge";
+					badge.className = "badge-online";
+					badge.textContent = "● Active Now";
+					this.badgeContainer.appendChild(badge);
+				} else {
+					const existingBadge = document.getElementById("statusBadge");
+					if (existingBadge) {
+						this.badgeContainer.removeChild(existingBadge);
+					}
+				}
+
+				console.log("You toggled the badge!");
+			}
+		}
+
+		// INSTANTIATE CLASS & BIND EVENTS
+		const myProfile = new ProfileCard();
+
+		document.getElementById("updateNameBtn").addEventListener("click", function() {
+			myProfile.updateName();
+		});
+
+		document.getElementById("toggleStatusBtn").addEventListener("click", function() {
+			myProfile.toggleStatus();
+		});
+	</script>
+	
 </body>
+	
 </html>
