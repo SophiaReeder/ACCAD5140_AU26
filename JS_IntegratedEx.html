@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="Keywords" content="HTML, CSS, Javascript">
+<meta name="Description" content="This is the page description!">
+<meta name="author" content="Sophia">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<title>js string manipulation</title>
+	
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css.map">
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- CSS File which will be referenced in -->
+<script src="js/bootstrap.bundle.min.js"></script>
+	
+	
+<style>
+	
+	.myDiv {
+		padding-top: 40px;
+		max-width: 800px;
+		margin: auto;
+	}
+	
+	.highlight {
+		background-color: yellow;
+	}
+	
+	
+	
+	
+	
+</style>	
+<script>
+	
+	
+	
+	
+	
+	
+	
+	
+</script>	
+	
+</head>
+	
+	
+	
+<body>
+<!-- EX: JAVASCRIPT STRING MANIPULATION -->
+<div class="myDiv">
+	<p id="text">
+	In common usage, randomness is the apparent or actual lack of definite patterns or predictability in information.[1][2] A random sequence of events, symbols or steps often has no order and does not follow an intelligible pattern or combination. Individual random events are, by definition, unpredictable, but if there is a known probability distribution, the frequency of different outcomes over repeated events (or "trials") is predictable.[note 1] For example, when throwing two dice, the outcome of any particular roll is unpredictable, but a sum of 7 will tend to occur twice as often as 4. In this view, randomness is not haphazardness; it is a measure of uncertainty of an outcome. Randomness applies to concepts of chance, probability, and information entropy.
+	</p>
+	
+	<button id="highlightButton" type="button" class="btn btn-primary">Highlight Long Words</button>
+	
+	<button id="removeHighlightsButton" type="button" class="btn btn-secondary">Remove Highlights</button>
+	
+	<p id="highlightCount">Highlighted Words: 0</p>
+	
+</div>
+	
+<script>
+	//defined so you can compare against the words int he paragraph
+	let wordLength = 8;
+	
+// Function to highlight long words
+	function highlightWords() {
+		let text = document.getElementById("text");
+		let words = text.textContent.split(" ");
+		
+		for(let i = 0; i < words.length; i++) {
+			if (words[i].length > wordLength) {
+				let span = document.createElement("span");
+				span.className = "highlight";
+				span.textContent = words[i];
+				words[i] = span.outerHTML;
+			}
+		}
+		text.innerHTML = words.join(" ");
+		updateHighlightCount();
+		
+	}
+	
+//Function to remove the highlights
+	function removeHighlights() {
+		let text = document.getElementById("text");
+		let highlightedWords = text.getElementsByClassName("highlight");
+		
+		while (highlightedWords.length > 0) {
+			let parent = highlightedWords[0].parentNode;
+			// the parent node is "span" - saying strip out the span and class and just go back to the text
+			parent.replaceChild(document.createTextNode(highlightedWords[0].textContent), highlightedWords[0]);
+		}
+		updateHighlightCount();
+	}
+	
+// Function to update the highlighted words count
+	function updateHighlightCount() {
+		let highlightCount = document.getElementsByClassName("highlight").length;
+		document.getElementById("highlightCount").textContent = "Highlighted Words: " + highlightCount;
+	}
+	
+	
+	
+document.getElementById("highlightButton").addEventListener("click", highlightWords);
+document.getElementById("removeHighlightsButton").addEventListener("click", removeHighlights);
+	
+	
+</script>
+	
+</body>
+</html>
