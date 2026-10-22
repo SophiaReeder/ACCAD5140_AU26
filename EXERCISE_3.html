@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="Keywords" content="HTML, CSS, JavaScript, Image Resizer, Labeler">
+    <meta name="Description" content="Interactive Image Resizer and Labeler Application">
+    <meta name="author" content="Sophia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Image Resizer &amp; Labeler Application</title>
+
+    <!-- BOOTSTRAP & CSS REFERENCES -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/Class3_firstCSSPage.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background-color: #E1CAF1;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .main-container {
+            max-width: 900px; /* Constrained under 1280px limit */
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color: #331059;
+            margin-bottom: 20px;
+        }
+
+        .customCard {
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .darkMode {
+            background-color: #222222 !important;
+            color: #FFFFFF !important;
+            border: 1px solid #444444;
+        }
+
+        .darkMode h2, .darkMode h3, .darkMode label {
+            color: #FFFFFF !important;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+        
+        .buttonPrimaryCustom {
+            background-color: #561E95;
+            color: #FFFFFF;
+        }
+        
+        .buttonSecondaryCustom {
+            background-color: #9C0E9E;
+            color: #FFFFFF;
+        }
+
+        .buttonDangerCustom {
+            background-color: #D9534F;
+            color: #FFFFFF;
+        }
+
+        #return-log {
+            background: #F8F9FA;
+            border: 1px solid #CCCCCC;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 13px;
+            min-height: 20px;
+            color: #333333;
+            word-wrap: break-word;
+        }
+
+        .darkMode #return-log {
+            background-color: #333333;
+            color: #FFFFFF;
+            border-color: #555555;
+        }
+
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 350px;
+            background-color: #F8F9FA;
+            border: 2px dashed #561E95;
+            border-radius: 8px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .darkMode .canvas-container {
+            background-color: #1A1A1A;
+            border-color: #9C0E9E;
+        }
+
+        #imageCard {
+            text-align: center;
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: width 0.2s ease, transform 0.2s ease;
+        }
+
+        .darkMode #imageCard {
+            background-color: #2A2A2A;
+        }
+
+        #targetImage {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .badgeOnline {
+            background-color: #9C0E9E;
+            color: #FFFFFF;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>    
+</head>
+    
+<body>
+    <div class="container main-container">
+        
+        <!-- HEADER ROW -->
+        <div class="row">
+            <div class="col-12">
+                <h1 id="appHeader">IMAGE RESIZER &amp; LABELER</h1>
+            </div>
+        </div>
+
+        <!-- MAIN INTERACTIVE INPUT CARD -->
+        <div class="row">
+            <div class="col-12">
+                <div id="inputCard" class="customCard">
+                    <h3>Image Configuration &amp; Controls</h3>
+                    
+                    <!-- SLIDER CONTROL FOR RESIZING -->
+                    <div class="mb-4">
+                        <label for="sizeSlider" class="form-label">
+                            <strong>Image Width:</strong> <span id="sliderValueDisplay">300px</span>
+                        </label>
+                        <input type="range" class="form-range" id="sizeSlider" min="150" max="550" value="300" oninput="handleSliderResize(this.value)">
+                    </div>
+
+                    <!-- LABEL FORM -->
+                    <form id="labelForm" onsubmit="event.preventDefault(); handleApplyLabel();" class="mb-4">
+                        <div class="mb-3">
+                            <label for="labelInput" class="form-label"><strong>Image Caption / Label:</strong></label>
+                            <input type="text" id="labelInput" class="form-control" placeholder="e.g. Leon Kennedy Portrait" required>
+                        </div>
+                        <button type="submit" class="buttonPrimaryCustom w-100">Apply Label to Image</button>
+                    </form>
+
+                    <!-- ACTION BUTTONS INTEGRATED INTO THE FORM CARD -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <button type="button" class="buttonSecondaryCustom w-100" onclick="toggleTheme()">Toggle Theme</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="buttonDangerCustom w-100" onclick="resetImageCard()">Reset Image</button>
+                        </div>
+                    </div>
+                    
+                    <!-- APPLICATION LOG / RETURN VALUE DISPLAY -->
+                    <label class="mt-2"><strong>Application Log / Return Value:</strong></label>
+                    <div id="return-log">System ready. Adjust slider or type a label above.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMAGE DISPLAY STAGE -->
+        <div class="row">
+            <div class="col-12">
+                <div id="stageCard" class="customCard">
+                    <h3>Display Stage</h3>
+                    <div class="canvas-container" id="canvasStage">
+                        <!-- DYNAMIC TARGET CARD -->
+                        <div id="imageCard" style="width: 300px;">
+                            <img id="targetImage" src="https://picsum.photos/id/1025/600/400" alt="Resizable Target">
+                            <div id="labelContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <script>
+        // CLASS DEFINITION: ImageConfig
+        class ImageConfig {
+            constructor(width, labelText) {
+                this.timestamp = Date.now(); // Built-in Method 1: Date.now()
+                this.width = width;
+                this.labelText = labelText;
+                this.createdTime = new Date().toLocaleTimeString(); // Built-in Method 2: .toLocaleTimeString()
+            }
+
+            // Method using String methods .split(), .join(), and .toUpperCase()
+            getFormattedLabel() {
+                // Built-in Method 3: .split()
+                const words = this.labelText.split(" ");
+                
+                // Built-in Method 4: .join()
+                const spacedText = words.join(" • ");
+                
+                // Built-in Method 5: .toUpperCase()
+                return spacedText.toUpperCase();
+            }
+
+            // Method generating formatted log output string
+            getFormattedDetails() {
+                return "LABEL: '" + this.getFormattedLabel() + "' | WIDTH: " + this.width + "PX (" + this.createdTime + ")";
+            }
+        }
+
+        // FUNCTION 1: Log and return output strings to UI log and console
+        function output(value) {
+            const logElement = document.getElementById("return-log");
+            if (logElement) {
+                logElement.textContent = value;
+            }
+            console.log("App Output Log: " + value);
+            return value;
+        }
+
+        // FUNCTION 2: Handles range slider adjustments and applies width directly to DOM style
+        function handleSliderResize(newWidth) {
+            const card = document.getElementById("imageCard");
+            const valueDisplay = document.getElementById("sliderValueDisplay");
+
+            // Control Structure: Boundary validation check
+            if (newWidth < 150 || newWidth > 550) {
+                return output("Error: Width value outside permitted bounds.");
+            }
+
+            // DOM Style Manipulation
+            card.style.width = newWidth + "px";
+            valueDisplay.textContent = newWidth + "px";
+
+            return output("Resized image width to " + newWidth + "px");
+        }
+
+        // FUNCTION 3: Processes form submission, creates DOM elements, and applies styles
+        function handleApplyLabel() {
+            const labelInput = document.getElementById("labelInput");
+            const slider = document.getElementById("sizeSlider");
+            const container = document.getElementById("labelContainer");
+
+            const rawText = labelInput.value.trim();
+            if (rawText === "") {
+                return output("Error: Label text cannot be empty.");
+            }
+
+            // Instantiate Class
+            const config = new ImageConfig(slider.value, rawText);
+
+            // Clear previous label DOM element if it exists
+            container.innerHTML = "";
+
+            // DOM Element Creation (createElement, appendChild)
+            const badge = document.createElement("div");
+            badge.id = "activeImageLabel";
+            badge.className = "badgeOnline";
+            badge.textContent = config.getFormattedLabel();
+
+            // Manipulate DOM style properties dynamically
+            badge.style.border = "2px solid #561E95";
+            badge.style.boxShadow = "0 2px 4px rgba(0,0,0,0.2)";
+
+            container.appendChild(badge);
+
+            // Reset Input Field
+            labelInput.value = "";
+
+            // Return Statement
+            return output("Successfully applied label: " + config.getFormattedDetails());
+        }
+
+        // FUNCTION 4: Resets image display card and removes dynamic DOM elements
+        function resetImageCard() {
+            const card = document.getElementById("imageCard");
+            const slider = document.getElementById("sizeSlider");
+            const valueDisplay = document.getElementById("sliderValueDisplay");
+            const container = document.getElementById("labelContainer");
+
+            // Reset width styling and slider values
+            card.style.width = "300px";
+            slider.value = 300;
+            valueDisplay.textContent = "300px";
+
+            // Control Structure: Remove label element if present (removeChild)
+            const activeLabel = document.getElementById("activeImageLabel");
+            if (activeLabel && activeLabel.parentNode) {
+                activeLabel.parentNode.removeChild(activeLabel);
+            }
+
+            return output("Reset image card to default state (300px width, no label).");
+        }
+
+        // FUNCTION 5: Toggle card dark mode theme with classList manipulation
+        function toggleTheme() {
+            const cards = document.querySelectorAll(".customCard");
+            let isDark = false;
+
+            // Control Structure: Iterate over cards to toggle class
+            cards.forEach(function(card) {
+                card.classList.toggle("darkMode");
+                isDark = card.classList.contains("darkMode");
+            });
+
+            return output("Theme toggled to " + (isDark ? "Dark Mode" : "Light Mode"));
+        }
+    </script>
+</body>
+</html>
