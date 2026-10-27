@@ -7,7 +7,7 @@
     <meta name="author" content="Sophia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Image Resizer &amp; Labeler Application</title>
+    <title>Image Resizer &amp; Labeler</title>
 
     <!-- BOOTSTRAP & CSS REFERENCES -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -26,7 +26,7 @@
         }
 
         .main-container {
-            max-width: 900px; /* Constrained under 1280px limit */
+            max-width: 900px;
             margin: 0 auto;
         }
         
@@ -82,24 +82,6 @@
         .buttonDangerCustom {
             background-color: #D9534F;
             color: #FFFFFF;
-        }
-
-        #return-log {
-            background: #F8F9FA;
-            border: 1px solid #CCCCCC;
-            padding: 12px;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 13px;
-            min-height: 20px;
-            color: #333333;
-            word-wrap: break-word;
-        }
-
-        .darkMode #return-log {
-            background-color: #333333;
-            color: #FFFFFF;
-            border-color: #555555;
         }
 
         .canvas-container {
@@ -170,7 +152,7 @@
                     <!-- SLIDER CONTROL FOR RESIZING -->
                     <div class="mb-4">
                         <label for="sizeSlider" class="form-label">
-                            <strong>Image Width:</strong> <span id="sliderValueDisplay">300px</span>
+                            <strong>Image Size:</strong> <span id="sliderValueDisplay">300px</span>
                         </label>
                         <input type="range" class="form-range" id="sizeSlider" min="150" max="550" value="300" oninput="handleSliderResize(this.value)">
                     </div>
@@ -179,13 +161,13 @@
                     <form id="labelForm" onsubmit="event.preventDefault(); handleApplyLabel();" class="mb-4">
                         <div class="mb-3">
                             <label for="labelInput" class="form-label"><strong>Image Caption / Label:</strong></label>
-                            <input type="text" id="labelInput" class="form-control" placeholder="e.g. Leon Kennedy Portrait" required>
+                            <input type="text" id="labelInput" class="form-control" placeholder="e.g. Leon Kennedy Portrait">
                         </div>
                         <button type="submit" class="buttonPrimaryCustom w-100">Apply Label to Image</button>
                     </form>
 
                     <!-- ACTION BUTTONS INTEGRATED INTO THE FORM CARD -->
-                    <div class="row g-2 mb-3">
+                    <div class="row g-2">
                         <div class="col-md-6">
                             <button type="button" class="buttonSecondaryCustom w-100" onclick="toggleTheme()">Toggle Theme</button>
                         </div>
@@ -193,10 +175,6 @@
                             <button type="button" class="buttonDangerCustom w-100" onclick="resetImageCard()">Reset Image</button>
                         </div>
                     </div>
-                    
-                    <!-- APPLICATION LOG / RETURN VALUE DISPLAY -->
-                    <label class="mt-2"><strong>Application Log / Return Value:</strong></label>
-                    <div id="return-log">System ready. Adjust slider or type a label above.</div>
                 </div>
             </div>
         </div>
@@ -209,7 +187,7 @@
                     <div class="canvas-container" id="canvasStage">
                         <!-- DYNAMIC TARGET CARD -->
                         <div id="imageCard" style="width: 300px;">
-                            <img id="targetImage" src="https://picsum.photos/id/1025/600/400" alt="Resizable Target">
+                            <img id="targetImage" src="images/Leon.jpg" alt="It's Leon Kennedy">
                             <div id="labelContainer"></div>
                         </div>
                     </div>
@@ -224,38 +202,28 @@
         // CLASS DEFINITION: ImageConfig
         class ImageConfig {
             constructor(width, labelText) {
-                this.timestamp = Date.now(); // Built-in Method 1: Date.now()
+                this.timestamp = Date.now();
                 this.width = width;
                 this.labelText = labelText;
-                this.createdTime = new Date().toLocaleTimeString(); // Built-in Method 2: .toLocaleTimeString()
             }
 
             // Method using String methods .split(), .join(), and .toUpperCase()
             getFormattedLabel() {
-                // Built-in Method 3: .split()
                 const words = this.labelText.split(" ");
-                
-                // Built-in Method 4: .join()
                 const spacedText = words.join(" • ");
-                
-                // Built-in Method 5: .toUpperCase()
                 return spacedText.toUpperCase();
             }
 
             // Method generating formatted log output string
             getFormattedDetails() {
-                return "LABEL: '" + this.getFormattedLabel() + "' | WIDTH: " + this.width + "PX (" + this.createdTime + ")";
+                console.log("LABEL: '" + this.getFormattedLabel() + "' | WIDTH: " + this.width + "PX");
             }
         }
 
-        // FUNCTION 1: Log and return output strings to UI log and console
+        // FUNCTION 1: Log output string to console only
         function output(value) {
-            const logElement = document.getElementById("return-log");
-            if (logElement) {
-                logElement.textContent = value;
-            }
             console.log("App Output Log: " + value);
-            return value;
+            console.log(value);
         }
 
         // FUNCTION 2: Handles range slider adjustments and applies width directly to DOM style
@@ -263,12 +231,10 @@
             const card = document.getElementById("imageCard");
             const valueDisplay = document.getElementById("sliderValueDisplay");
 
-            // Control Structure: Boundary validation check
             if (newWidth < 150 || newWidth > 550) {
                 return output("Error: Width value outside permitted bounds.");
             }
 
-            // DOM Style Manipulation
             card.style.width = newWidth + "px";
             valueDisplay.textContent = newWidth + "px";
 
@@ -286,28 +252,22 @@
                 return output("Error: Label text cannot be empty.");
             }
 
-            // Instantiate Class
             const config = new ImageConfig(slider.value, rawText);
 
-            // Clear previous label DOM element if it exists
             container.innerHTML = "";
 
-            // DOM Element Creation (createElement, appendChild)
             const badge = document.createElement("div");
             badge.id = "activeImageLabel";
             badge.className = "badgeOnline";
             badge.textContent = config.getFormattedLabel();
 
-            // Manipulate DOM style properties dynamically
             badge.style.border = "2px solid #561E95";
             badge.style.boxShadow = "0 2px 4px rgba(0,0,0,0.2)";
 
             container.appendChild(badge);
 
-            // Reset Input Field
             labelInput.value = "";
 
-            // Return Statement
             return output("Successfully applied label: " + config.getFormattedDetails());
         }
 
@@ -318,12 +278,10 @@
             const valueDisplay = document.getElementById("sliderValueDisplay");
             const container = document.getElementById("labelContainer");
 
-            // Reset width styling and slider values
             card.style.width = "300px";
             slider.value = 300;
             valueDisplay.textContent = "300px";
 
-            // Control Structure: Remove label element if present (removeChild)
             const activeLabel = document.getElementById("activeImageLabel");
             if (activeLabel && activeLabel.parentNode) {
                 activeLabel.parentNode.removeChild(activeLabel);
@@ -337,7 +295,6 @@
             const cards = document.querySelectorAll(".customCard");
             let isDark = false;
 
-            // Control Structure: Iterate over cards to toggle class
             cards.forEach(function(card) {
                 card.classList.toggle("darkMode");
                 isDark = card.classList.contains("darkMode");
