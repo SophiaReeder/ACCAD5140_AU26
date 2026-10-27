@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+	
+<!-- META INFO HERE -->
+<meta charset="utf-8">
+<meta name="Keywords" content="HTML, CSS, Javascript">
+<meta name="Description" content="This is the page description!">
+<meta name="author" content="Sophia">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<title>More JS Example</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css.map">
+<!-- CSS File which will be referenced in -->
+<link rel="stylesheet" href="css/Class3_firstCSSPage.css">
+<script src="js/bootstrap.bundle.min.js"></script>
+	
+<style>
+	
+	body {
+		background-color: #647BAA;
+	}
+	
+	.todoCard {
+		max-width: 550px;
+		padding: 20px;
+	}
+	
+	.completed {
+		text-decoration: line-through;
+		color: grey;
+	}
+
+	
+	
+</style>
+	
+	
+	
+</head>
+
+<body>
+	
+	<div class="container mt-5">
+		<div class="card shadow mx-auto todoCard">
+			<div class="card-body"></div>
+			
+			<!-- TASK INPUT -->
+				<div class="input-group mb-4">
+					<input type="text" id="taskInput" class="form-control" placeholder="Enter a Task">
+					<button id="addButton" class="btn btn-primary">Add</button>
+				</div>
+			
+			<!-- TASK LIST -->
+				<ul id="taskList" class="list-group"></ul>
+			
+			<!-- TASK COUNT -->
+				<p id="taskCount" class="text-muted mt-3 mb-0">0 Tasks</p>
+		</div>
+	</div>
+	
+	
+<script>
+	
+class TodoApp {
+	constructor() {
+		this.tasks = []; //primary array for storing tasks
+		this.taskInput = document.getElementById("taskInput");
+		this.taskList = document.getElementById("taskList");
+		this.taskCount = document.getElementById("taskCount");
+		this.addButton = document.getElementById("addButton");
+		
+		const app = this;
+		
+		this.addButton.addEventListener("click", function() {
+				app.addTask();
+			} // END OF FUNCTION
+		); //END OF EVENT LISTENER
+	} //END OF CONSTUCTOR
+	
+//METHOD 1: Add new task
+addTask() {
+	const taskText = this.taskInput.value.trim();
+	
+	if (taskText === "") {
+		return;
+	} // END OF IF STATEMENT
+	
+	// new task data object
+	const task = {
+		id: Date.now(),
+		text: taskText,
+		completed: false
+	}; // END OF TASK VARIABLE
+	
+	this.tasks.push(task);
+	this.taskInput.value = "";
+	this.showTasks();	
+	
+	console.log(this.tasks);
+} //END OF METHOD 1
+	
+//METHOD 2: Complete tasks (with toggle)
+	
+//METHOD 3: Delete tasks
+
+//METHOD 4: Show tasks
+showTasks() {
+	const app = this;
+	this.taskList.innerHTML = "";
+	
+	for (let i = 0; i < this.tasks.length; i++) {
+		const task = this.tasks[i];
+		const listItem = document.createElement("li");
+		listItem.className = "list-group-item d-flex justify-content-between align-items-center";
+		
+		const taskText = document.createElement("span");
+		taskText.textContent = task.text;
+		
+		if (task.completed === true) {
+			taskText.classList.add("completed");
+			}
+		
+		listItem.appendChild(taskText);
+		this.taskList.appendChild(listItem);
+	
+	} //END OF FOR LOOP
+	
+	this.taskCount.textContent = this.tasks.length + " tasks";
+	
+} //END OF METHOD 4
+	
+	
+} //END OF CLASS
+	
+//CALL CLASS
+//IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT
+const todoApp = new TodoApp();
+
+	
+	
+	
+	
+</script>
+	
+</body>
+</html>
