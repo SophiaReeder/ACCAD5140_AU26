@@ -143,18 +143,40 @@
             </div>
         </div>
 
-        <!-- MAIN INTERACTIVE INPUT CARD -->
+        <!-- CONSOLIDATED SINGLE CARD CONTAINER -->
         <div class="row">
             <div class="col-12">
-                <div id="inputCard" class="customCard">
-                    <h3>Image Configuration &amp; Controls</h3>
+                <div id="mainAppCard" class="customCard">
                     
-                    <!-- SLIDER CONTROL FOR RESIZING -->
-                    <div class="mb-4">
-                        <label for="sizeSlider" class="form-label">
-                            <strong>Image Size:</strong> <span id="sliderValueDisplay">300px</span>
+                    <!-- DISPLAY CURRENT IMAGE SIZE -->
+                    <div class="mb-3 text-center">
+                        <label class="form-label">
+                            <strong>Current Image Width:</strong> <span id="sizeValueDisplay">300px</span>
                         </label>
-                        <input type="range" class="form-range" id="sizeSlider" min="150" max="550" value="300" oninput="handleSliderResize(this.value)">
+                    </div>
+
+                    <!-- IMAGE DISPLAY STAGE -->
+                    <div class="canvas-container mb-4" id="canvasStage">
+                        <!-- DYNAMIC TARGET CARD -->
+                        <div id="imageCard" style="width: 300px;">
+                            <img id="targetImage" src="images/Leon.jpg" alt="It's Leon Kennedy">
+                            <div id="labelContainer"></div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- RESIZING AND RESET CONTROL BUTTONS (3-COLUMN GRID) -->
+                    <div class="row g-2 mb-4">
+                        <div class="col-md-4">
+                            <button type="button" class="buttonPrimaryCustom w-100" onclick="handleSizeChange(50)">Enlarge (+50px)</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="buttonDangerCustom w-100" onclick="resetImageCard()">Reset Image</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="buttonPrimaryCustom w-100" onclick="handleSizeChange(-50)">Shrink (-50px)</button>
+                        </div>
                     </div>
 
                     <!-- LABEL FORM -->
@@ -163,144 +185,106 @@
                             <label for="labelInput" class="form-label"><strong>Image Caption / Label:</strong></label>
                             <input type="text" id="labelInput" class="form-control" placeholder="e.g. Leon Kennedy Portrait">
                         </div>
-                        <button type="submit" class="buttonPrimaryCustom w-100">Apply Label to Image</button>
+                        <button type="submit" class="buttonSecondaryCustom w-100">Apply Label to Image</button>
                     </form>
 
-                    <!-- ACTION BUTTONS INTEGRATED INTO THE FORM CARD -->
+                    <!-- THEME TOGGLE BUTTON -->
                     <div class="row g-2">
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <button type="button" class="buttonSecondaryCustom w-100" onclick="toggleTheme()">Toggle Theme</button>
                         </div>
-                        <div class="col-md-6">
-                            <button type="button" class="buttonDangerCustom w-100" onclick="resetImageCard()">Reset Image</button>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- IMAGE DISPLAY STAGE -->
-        <div class="row">
-            <div class="col-12">
-                <div id="stageCard" class="customCard">
-                    <h3>Display Stage</h3>
-                    <div class="canvas-container" id="canvasStage">
-                        <!-- DYNAMIC TARGET CARD -->
-                        <div id="imageCard" style="width: 300px;">
-                            <img id="targetImage" src="images/Leon.jpg" alt="It's Leon Kennedy">
-                            <div id="labelContainer"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <!-- JS -->
     <script>
-        // CLASS DEFINITION: ImageConfig
+        //Starting width
+        let currentWidth = 300;
+
+        //CLASS 1: Image size and label text
         class ImageConfig {
             constructor(width, labelText) {
-                this.timestamp = Date.now();
                 this.width = width;
                 this.labelText = labelText;
-            }
+            } // END OF CONSTRUCTOR
 
-            // Method using String methods .split(), .join(), and .toUpperCase()
             getFormattedLabel() {
                 const words = this.labelText.split(" ");
-                const spacedText = words.join(" • ");
+                const spacedText = words.join(" ");
                 return spacedText.toUpperCase();
-            }
+            } // END FUNCTION
+        } // END OF CLASS
 
-            // Method generating formatted log output string
-            getFormattedDetails() {
-                console.log("LABEL: '" + this.getFormattedLabel() + "' | WIDTH: " + this.width + "PX");
-            }
-        }
 
-        // FUNCTION 1: Log output string to console only
-        function output(value) {
-            console.log("App Output Log: " + value);
-            console.log(value);
-        }
+        // FUNCTION 1: Handles Button Image Resizing (Step-based adjustment)
+        function handleSizeChange(amount) {
+            const imageCard = document.getElementById("imageCard");
+            const sizeDisplay = document.getElementById("sizeValueDisplay");
 
-        // FUNCTION 2: Handles range slider adjustments and applies width directly to DOM style
-        function handleSliderResize(newWidth) {
-            const card = document.getElementById("imageCard");
-            const valueDisplay = document.getElementById("sliderValueDisplay");
+            const newWidth = currentWidth + amount;
 
+            //Don't let image get too big or too small (pop-up appears)
             if (newWidth < 150 || newWidth > 550) {
-                return output("Error: Width value outside permitted bounds.");
+                alert("NO STOP! Your image must stay between 150px and 550p!");
             }
 
-            card.style.width = newWidth + "px";
-            valueDisplay.textContent = newWidth + "px";
-
-            return output("Resized image width to " + newWidth + "px");
+            currentWidth = newWidth;
+            imageCard.style.width = currentWidth + "px";
+            sizeDisplay.textContent = currentWidth + "px";
         }
 
-        // FUNCTION 3: Processes form submission, creates DOM elements, and applies styles
+
+        //FUNCTION 2: Label on image (type in and press button to submit)
         function handleApplyLabel() {
             const labelInput = document.getElementById("labelInput");
-            const slider = document.getElementById("sizeSlider");
-            const container = document.getElementById("labelContainer");
+            const labelContainer = document.getElementById("labelContainer");
 
             const rawText = labelInput.value.trim();
             if (rawText === "") {
-                return output("Error: Label text cannot be empty.");
+                alert("Error: Label text cannot be empty.");
             }
 
-            const config = new ImageConfig(slider.value, rawText);
+            const config = new ImageConfig(currentWidth, rawText);
 
-            container.innerHTML = "";
+            labelContainer.innerHTML = "";
 
             const badge = document.createElement("div");
             badge.id = "activeImageLabel";
             badge.className = "badgeOnline";
             badge.textContent = config.getFormattedLabel();
-
             badge.style.border = "2px solid #561E95";
-            badge.style.boxShadow = "0 2px 4px rgba(0,0,0,0.2)";
-
-            container.appendChild(badge);
+            labelContainer.appendChild(badge);
 
             labelInput.value = "";
-
-            return output("Successfully applied label: " + config.getFormattedDetails());
         }
 
-        // FUNCTION 4: Resets image display card and removes dynamic DOM elements
+
+        // FUNCTION 3: Resets image display card and removes dynamic DOM elements
         function resetImageCard() {
-            const card = document.getElementById("imageCard");
-            const slider = document.getElementById("sizeSlider");
-            const valueDisplay = document.getElementById("sliderValueDisplay");
-            const container = document.getElementById("labelContainer");
+            const imageCard = document.getElementById("imageCard");
+            const sizeDisplay = document.getElementById("sizeValueDisplay");
+            const labelContainer = document.getElementById("labelContainer");
 
-            card.style.width = "300px";
-            slider.value = 300;
-            valueDisplay.textContent = "300px";
+            currentWidth = 300;
+            imageCard.style.width = "300px";
+            sizeDisplay.textContent = "300px";
 
-            const activeLabel = document.getElementById("activeImageLabel");
-            if (activeLabel && activeLabel.parentNode) {
-                activeLabel.parentNode.removeChild(activeLabel);
-            }
-
-            return output("Reset image card to default state (300px width, no label).");
+            labelContainer.innerHTML = "";
         }
 
-        // FUNCTION 5: Toggle card dark mode theme with classList manipulation
+
+        // FUNCTION 4: Toggle card dark mode theme with classList manipulation
         function toggleTheme() {
             const cards = document.querySelectorAll(".customCard");
-            let isDark = false;
 
             cards.forEach(function(card) {
                 card.classList.toggle("darkMode");
-                isDark = card.classList.contains("darkMode");
             });
-
-            return output("Theme toggled to " + (isDark ? "Dark Mode" : "Light Mode"));
         }
     </script>
 </body>
