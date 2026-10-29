@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="Keywords" content="HTML, CSS, JavaScript, Image Resizer, Labeler">
-    <meta name="Description" content="Interactive Image Resizer and Labeler Application">
-    <meta name="author" content="Sophia">
+    <meta name="Description" content="Exercise 3 - JavaScript Application">
+    <meta name="author" content="Sophia Reeder">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Image Resizer &amp; Labeler</title>
+    <title>Exercise 3_Sophia Reeder</title>
 
     <!-- BOOTSTRAP & CSS REFERENCES -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,183 +17,159 @@
     
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
             min-height: 100vh;
-            background-color: #E1CAF1;
+            background-color: #9BC3D1;
             color: #000000;
-            margin: 0;
-            padding: 20px;
         }
-
-        .main-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        h1 {
+		
+		h1 {
             text-align: center;
             font-weight: bold;
-            color: #331059;
-            margin-bottom: 20px;
+            color: #090B39;
+            margin: 40px;
         }
-
+		
+		h4 {
+            text-align: center;
+            font-weight: bold;
+            color: #5F638C;
+        }
+        
         .customCard {
             background-color: #FFFFFF;
-            padding: 25px;
+            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        .darkMode {
-            background-color: #222222 !important;
-            color: #FFFFFF !important;
-            border: 1px solid #444444;
-        }
-
-        .darkMode h2, .darkMode h3, .darkMode label {
-            color: #FFFFFF !important;
-        }
-
-        button {
-            padding: 10px 18px;
+  
+        .buttonImageSize {
+            width: 100%;
+			background-color: #323D9E;
+            color: #FFFFFF;
+			padding: 10px 18px;
             border: none;
             border-radius: 6px;
-            cursor: pointer;
             font-weight: bold;
-            transition: opacity 0.2s;
-        }
-
-        button:hover {
-            opacity: 0.9;
         }
         
-        .buttonPrimaryCustom {
-            background-color: #561E95;
+        .buttonLabel {
+            background-color: #4E7AA8;
             color: #FFFFFF;
-        }
-        
-        .buttonSecondaryCustom {
-            background-color: #9C0E9E;
-            color: #FFFFFF;
-        }
-
-        .buttonDangerCustom {
-            background-color: #D9534F;
-            color: #FFFFFF;
+			padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
         }
 
-        .canvas-container {
+        .buttonReset {
+            width: 100%;
+			background-color: #A62A55;
+            color: #FFFFFF;
+			padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .imageContainer {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 350px;
             background-color: #F8F9FA;
-            border: 2px dashed #561E95;
+            border: 2px solid #5F638C;
             border-radius: 8px;
-            padding: 20px;
-            overflow: hidden;
+            padding: 12px;
         }
-
-        .darkMode .canvas-container {
-            background-color: #1A1A1A;
-            border-color: #9C0E9E;
+		
+		.imageLabel {
+            background-color: #4E7AA8;
+            color: #FFFFFF;
+            padding: 4px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-top: 12px;
+            font-weight: bold;
         }
+		
+		.spacerDiv {
+		height: 40px;
+		}
 
         #imageCard {
             text-align: center;
-            background-color: #FFFFFF;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            transition: width 0.2s ease, transform 0.2s ease;
-        }
-
-        .darkMode #imageCard {
-            background-color: #2A2A2A;
+            padding: 4px;
+            width: 300px;
         }
 
         #targetImage {
             max-width: 100%;
-            height: auto;
-            border-radius: 6px;
+            border-radius: 8px;
         }
 
-        .badgeOnline {
-            background-color: #9C0E9E;
-            color: #FFFFFF;
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 13px;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
+        
     </style>    
 </head>
     
 <body>
-    <div class="container main-container">
+    <div class="container">
         
         <!-- HEADER ROW -->
         <div class="row">
             <div class="col-12">
-                <h1 id="appHeader">IMAGE RESIZER &amp; LABELER</h1>
+                <h1>IMAGE RESIZER &amp; LABELER</h1>
             </div>
         </div>
 
-        <!-- CONSOLIDATED SINGLE CARD CONTAINER -->
+        <!-- CARD ROW -->
         <div class="row">
             <div class="col-12">
-                <div id="mainAppCard" class="customCard">
+                <div class="customCard">
                     
-                    <!-- DISPLAY CURRENT IMAGE SIZE -->
-                    <div class="mb-3 text-center">
+                    <!-- IMAGE WIDTH -->
+                    <div class="text-center">
                         <label class="form-label">
-                            <strong>Current Image Width:</strong> <span id="sizeValueDisplay">300px</span>
+                            <h4>Current Image Width:</h4>
+                            <span id="sizeDisplay">300px</span>
                         </label>
                     </div>
 
-                    <!-- IMAGE DISPLAY STAGE -->
-                    <div class="canvas-container mb-4" id="canvasStage">
-                        <!-- DYNAMIC TARGET CARD -->
-                        <div id="imageCard" style="width: 300px;">
+                    <!-- IMAGE -->
+                    <div class="imageContainer mb-4" id="canvasStage">
+                        <div id="imageCard">
                             <img id="targetImage" src="images/Leon.jpg" alt="It's Leon Kennedy">
                             <div id="labelContainer"></div>
                         </div>
                     </div>
 
-                    <hr class="my-4">
-
-                    <!-- RESIZING AND RESET CONTROL BUTTONS (3-COLUMN GRID) -->
-                    <div class="row g-2 mb-4">
-                        <div class="col-md-4">
-                            <button type="button" class="buttonPrimaryCustom w-100" onclick="handleSizeChange(50)">Enlarge (+50px)</button>
+                    <!-- BUTTONS -->
+                    <div class="row">
+                        <div class="col-4">
+                            <button class="buttonImageSize" onclick="imageSize(-50)">- 50px</button>
                         </div>
-                        <div class="col-md-4">
-                            <button type="button" class="buttonDangerCustom w-100" onclick="resetImageCard()">Reset Image</button>
+                        <div class="col-4">
+                            <button class="buttonReset" onclick="resetImageSize()">RESET IMAGE</button>
                         </div>
-                        <div class="col-md-4">
-                            <button type="button" class="buttonPrimaryCustom w-100" onclick="handleSizeChange(-50)">Shrink (-50px)</button>
+                        <div class="col-4">
+							<button class="buttonImageSize" onclick="imageSize(50)">+ 50px</button>
                         </div>
                     </div>
+					
+					<div class="spacerDiv">&nbsp;</div>
 
                     <!-- LABEL FORM -->
-                    <form id="labelForm" onsubmit="event.preventDefault(); handleApplyLabel();" class="mb-4">
-                        <div class="mb-3">
-                            <label for="labelInput" class="form-label"><strong>Image Caption / Label:</strong></label>
-                            <input type="text" id="labelInput" class="form-control" placeholder="e.g. Leon Kennedy Portrait">
+					<!-- event.preventDefault() stops page from automatically reloading when submitting form, so label stays on page -->
+                    <form id="labelForm" onsubmit="event.preventDefault(); imageLabel();">
+                        <div>
+                            <label for="labelInput" class="col-form-label"><h4>Image Label:</h4></label>
+                            <input type="text" id="labelInput" class="form-control" placeholder= "Ex: Leon Kennedy">
                         </div>
-                        <button type="submit" class="buttonSecondaryCustom w-100">Apply Label to Image</button>
+						
+						<div class="spacerDiv">&nbsp;</div>
+                        <button type="submit" class="buttonLabel">Add Label to Image</button>
+						
                     </form>
-
-                    <!-- THEME TOGGLE BUTTON -->
-                    <div class="row g-2">
-                        <div class="col-12">
-                            <button type="button" class="buttonSecondaryCustom w-100" onclick="toggleTheme()">Toggle Theme</button>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -203,7 +179,7 @@
 
     <!-- JS -->
     <script>
-        //Starting width
+        //Starting image width: 300px
         let currentWidth = 300;
 
         //CLASS 1: Image size and label text
@@ -211,63 +187,70 @@
             constructor(width, labelText) {
                 this.width = width;
                 this.labelText = labelText;
-            } // END OF CONSTRUCTOR
-
+            } //END OF CONSTRUCTOR
+				
+			//FUNCTION: Make everything typed uppercase
             getFormattedLabel() {
-                const words = this.labelText.split(" ");
-                const spacedText = words.join(" ");
-                return spacedText.toUpperCase();
-            } // END FUNCTION
-        } // END OF CLASS
+                return this.labelText.toUpperCase();
+            } //END FUNCTION
+        } //END OF CLASS
 
 
-        // FUNCTION 1: Handles Button Image Resizing (Step-based adjustment)
-        function handleSizeChange(amount) {
+        //FUNCTION 1: Image resizing
+		function imageSize(number) {
+    	const imageCard = document.getElementById("imageCard");
+    	const sizeDisplay = document.getElementById("sizeDisplay");
+
+		let newWidth = currentWidth + number;
+
+			//Min size
+			if (newWidth < 100) {
+				newWidth = 100;
+				alert("NO STOP! Your image must stay between 150px and 550px!");
+			} //END OF IF
+			//Max size
+			else if (newWidth > 600) {
+				newWidth = 600;
+				alert("NO STOP! Your image must stay between 150px and 550px!");
+			} //END OF ELSE IF
+
+		//Update width
+		currentWidth = newWidth;
+		imageCard.style.width = currentWidth + "px";
+    	sizeDisplay.textContent = currentWidth + "px";
+		} //END OF FUNCTION
+
+
+        //FUNCTION 2: Label on image
+		function imageLabel() {
+    		const labelInput = document.getElementById("labelInput");
+			const labelContainer = document.getElementById("labelContainer");
+
+			const text = labelInput.value.trim();
+
+    		//Error if there's no text typed into form
+    		if (text === "") {
+       			alert("You didn't write anything! - The label can't be empty");
+    		} //END OF IF STATEMENT
+
+    		//Clear previous text on label
+    		labelContainer.innerHTML = "";
+
+    		//Create new label
+    		const label = document.createElement("div");
+    		label.className = "imageLabel";
+    		label.textContent = text.toUpperCase();
+
+    		//Add label to page and clear textbox
+    		labelContainer.appendChild(label);
+    		labelInput.value = "";
+		} //END OF FUNCTION
+		
+
+        //FUNCTION 3: Reset image size
+        function resetImageSize() {
             const imageCard = document.getElementById("imageCard");
-            const sizeDisplay = document.getElementById("sizeValueDisplay");
-
-            const newWidth = currentWidth + amount;
-
-            //Don't let image get too big or too small (pop-up appears)
-            if (newWidth < 150 || newWidth > 550) {
-                alert("NO STOP! Your image must stay between 150px and 550p!");
-            }
-
-            currentWidth = newWidth;
-            imageCard.style.width = currentWidth + "px";
-            sizeDisplay.textContent = currentWidth + "px";
-        }
-
-
-        //FUNCTION 2: Label on image (type in and press button to submit)
-        function handleApplyLabel() {
-            const labelInput = document.getElementById("labelInput");
-            const labelContainer = document.getElementById("labelContainer");
-
-            const rawText = labelInput.value.trim();
-            if (rawText === "") {
-                alert("Error: Label text cannot be empty.");
-            }
-
-            const config = new ImageConfig(currentWidth, rawText);
-
-            labelContainer.innerHTML = "";
-
-            const badge = document.createElement("div");
-            badge.id = "activeImageLabel";
-            badge.className = "badgeOnline";
-            badge.textContent = config.getFormattedLabel();
-            badge.style.border = "2px solid #561E95";
-            labelContainer.appendChild(badge);
-
-            labelInput.value = "";
-        }
-
-
-        // FUNCTION 3: Resets image display card and removes dynamic DOM elements
-        function resetImageCard() {
-            const imageCard = document.getElementById("imageCard");
-            const sizeDisplay = document.getElementById("sizeValueDisplay");
+            const sizeDisplay = document.getElementById("sizeDisplay");
             const labelContainer = document.getElementById("labelContainer");
 
             currentWidth = 300;
@@ -275,17 +258,7 @@
             sizeDisplay.textContent = "300px";
 
             labelContainer.innerHTML = "";
-        }
-
-
-        // FUNCTION 4: Toggle card dark mode theme with classList manipulation
-        function toggleTheme() {
-            const cards = document.querySelectorAll(".customCard");
-
-            cards.forEach(function(card) {
-                card.classList.toggle("darkMode");
-            });
-        }
+        } //END OF FUNCTION
     </script>
 </body>
 </html>
