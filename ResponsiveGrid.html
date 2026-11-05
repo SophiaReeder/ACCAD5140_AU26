@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="Keywords" content="HTML, CSS, JavaScript, Image Resizer, Labeler">
+    <meta name="Description" content="Exercise 3 - JavaScript Application">
+    <meta name="author" content="Sophia Reeder">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Responsive Grid</title>
+
+    <!-- BOOTSTRAP & CSS REFERENCES -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/Class3_firstCSSPage.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+	
+<style>
+	/* CSS HERE */
+	/* ^ = starts with, $ = ends with, * = contains anywhere, ~ = exact match */
+	[class^="col-"], [class*=" col-"] {
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		background-color: lightgray;
+		border: 1px, solid rgba(86, 61, 124, 0.2);
+	}
+	
+	/* ADJUST CSS FOR BREAKPOINTS */
+	@media {
+		
+	}
+	
+	
+</style>
+	
+	
+</head>
+
+<body>
+	<!-- MULTIPLE BREAKPOINTS -->
+	<!-- XS < 576,   SM >= 576,   MD >= 768,   LG >= 1024,   XL >= 1280,   2XL >= 1536 -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">IDENTITY</div>
+			<div class="col-sm-9">GLOBAL NAV</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12">MAIN IMAGE</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-lg-2">IMAGE 1</div>
+			<div class="col-sm-8 col-md-8 col-lg-4">TEXT 1</div>
+			<div class="col-sm-4 col-md-4 col-lg-2">IMAGE 2</div>
+			<div class="col-sm-8 col-md-8 col-lg-4">TEXT 2</div>
+		</div>
+		
+		<div class="row" id="Something4js">
+			<div class="col-sm-4 col-md-12 col-lg-2">IMAGE 1</div>
+			<div class="col-sm-8 col-md-12 col-lg-4">TEXT 1</div>
+			<div class="col-sm-4 col-md-12 col-lg-2">IMAGE 2</div>
+			<div class="col-sm-8 col-md-12 col-lg-4">TEXT 2</div>
+		</div>
+		
+		
+		
+	</div>
+	
+	
+	<!-- START RESPONSIVE  -->
+	
+	
+
+	<!-- END RESPONSIVE  -->
+	
+	
+</body>
+</html>
