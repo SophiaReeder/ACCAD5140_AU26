@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="Keywords" content="HTML, CSS, JavaScript, Image Resizer, Labeler">
+    <meta name="Description" content="Exercise 3 - JavaScript Application">
+    <meta name="author" content="Sophia Reeder">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>More Responsive Grids</title>
+
+    <!-- BOOTSTRAP & CSS REFERENCES -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/Class3_firstCSSPage.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+	
+<style>
+	
+	/* CSS HERE */
+	/* 5.3 BOOTSTRAP VERSION*/
+		[class^="col-"], [class*=" col-"] {
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
+			/* background-color: lightgray; */
+			border: 1px, solid rgba(86, 61, 124, 0.2);
+			
+		} /* END OF CLASS */
+	
+	/* DEFAULT FONT SIZE */
+	html {
+		/* font-size: 16px; */
+		font-size: calc(15px + 0.4);
+	} /* END OF HTML */
+	
+	/* CSS ANIMATIONS */
+	.card-container {
+		animation: fadeIn 1s ease;
+	}
+		
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+	
+	/* BASE HERO CSS */
+	.hero {
+			padding: 50px;
+			text-align: left;
+			background-color: #black;
+			color: #fff;
+			transition: all 0.3s ease;
+		}
+	
+	/* MOST CSS SHOULD BE WITHIN A MEDIA QUERY */
+	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR LARGE SCREENS */
+	@media (min-width: 1024px) and (max-width: 2560px) {
+		.hero {
+			padding: 100px;
+			text-align: center;
+			background-color: #713D82;
+			color: #fff;
+			transition: all 0.3s ease;
+		}
+		
+		.hero h1 {
+			font-size: /*4rem*/ /*defines from a specific starting point*/ 4vw /*viewportwidth scales the type, not very fine-grain*/;
+		}
+		
+		/* HIDES FOOTER ON LG VIEWPORT */
+		.footer {
+			display: none;
+		}
+		
+	} /* END OF MEDIA FOR LG */
+	
+	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR MEDIUM SCREENS */
+	@media (min-width: 768px) and (max-width: 1023px) {
+		.hero {
+			padding: 80px;
+			text-align: center;
+			background-color: #3D1949;
+		}
+		
+		.hero h1 {
+			font-size: 2.75rem;
+		}
+		
+		.card-title {
+			font-size: 2rem;
+			
+		}
+		
+		.card-text {
+			font-size: 1.4rem;
+			
+		}
+		
+		.card-img-top {
+			object-fit: none;
+			
+		}		
+	} /* END OF MEDIA FOR MD */
+	
+	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR SMALL SCREENS */
+	@media (max-width: 767px) {
+		.hero {
+			padding: 40px;
+			text-align: center;
+			background-color: #2B0E3A;
+		}
+		
+		.hero h1 {
+			font-size: 1.5rem;
+		}
+	} /* END OF MEDIA FOR SM */
+		
+</style>
+</head>
+
+<body>
+<!-- XS < 576,   SM >= 576,   MD >= 768,   LG >= 1024,   XL >= 1280,   2XL >= 1536 -->
+	
+	<!-- RESPONSIVE GRID -->
+	<div class="container-fluid">
+		<!-- HERO SECTION -->
+		<div class="row hero">
+			<div class="col-sm-12">
+				<h1>Welcome to Our Blurb Webpage</h1>
+				<p>As the persuasive summary of any book, film, or creative work, a blurb is a short promotional description. Blurbs typically appear on the back cover of printed books and are intended to encourage readers to buy into the book. For ebooks and digital publications, you’ll usually find a blurb after the main cover image or used as the product description in an online bookstore.</p>
+			</div>
+		</div>
+		
+		<!-- CARD SECTION -->
+		<div class="row card-container">
+			<div class="col-sm-12 col-md-6 col-lg-4">
+				<!-- CARD 1 -->
+				<div class="card">
+					<img class="card-img-top" src="images/image1.jpg" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Card 1</h5>
+							<p class="card-text">Cards layout copy adjust according to screen size.</p>
+						</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-4">
+				<div class="card">
+						<img class="card-img-top" src="images/image2.jpg" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card 2</h5>
+								<p class="card-text">Cards layout copy adjust according to screen size.</p>
+							</div>
+					</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-4">
+				<div class="card">
+						<img class="card-img-top" src="images/image3.jpg" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card 3</h5>
+								<p class="card-text">Cards layout copy adjust according to screen size.</p>
+							</div>
+					</div>
+			</div>
+		</div>
+		
+		<!-- FOOTER SECTION -->
+		<div class="row footer">
+			<div class="col-sm-12">FOOTER</div>
+		</div>
+	
+	
+	</div>	
+	
+	
+	
+	
+	
+</body>
+</html>
