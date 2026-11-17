@@ -210,16 +210,42 @@
 		if (mediumScreen.matches) {
 			//change card image
 			card1Image.src = "images/image4.jpg";
+			
+			//add new card - if it doesn't exist
+			if (!document.getElementById("card4-column")) {
+				const card4 = card3.cloneNode(true);
+				card4.id = "card4-column";
+				card4.querySelector(".card-title").textContent = "Card 4";
+				card4.querySelector("img").src = "images/image1.jpg";
+				card4.querySelector("img").alt = "Card 4 Image";
+				
+				//change grid structure
+				card4.classList.remove("col-md-12");
+				card4.classList.add("col-md-6");
+				
+				card3.classList.remove("col-md-12");
+				card3.classList.add("col-md-6");
+				
+				card3.after(card4);
+			} //END OF SECOND CONDITIONAL
+			
 		} else {
 			card1Image.src = "images/image1.jpg";
 			
-		}
+			//stop card 4 from showing up at other breakpoints
+			const card4 = document.getElementById("card4-column");
+			if (card4) {
+				card4.remove();
+			} //END OF IF
+			
+		} //END OF ELSE
 		
 		
 	} //END OF FUNCTION
 	
 	//RUN FUNCTION
 	adjustCards();
+	//RUNS FUNCTION AGAIN (BRINGS BACK AFTER REMOVING)
 	mediumScreen.addEventListener("change", adjustCards);
 	
 	
