@@ -83,7 +83,7 @@
 	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR MEDIUM SCREENS */
 	@media (min-width: 768px) and (max-width: 1023px) {
 		.hero {
-			padding: 80px;
+			padding: 40px;
 			text-align: center;
 			background-color: #3D1949;
 		}
@@ -103,9 +103,25 @@
 		}
 		
 		.card-img-top {
-			object-fit: none;
+			object-fit: cover;
+			height: 180px;
 			
-		}		
+		}
+		
+		.card-title {
+			font-size: 1.2rem;
+			color: #333;
+		}
+		
+		.card-text {
+			
+			font-size: 1.0rem;
+		}
+		
+		.footer {
+			display: none;
+		}
+		
 	} /* END OF MEDIA FOR MD */
 	
 	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR SMALL SCREENS */
@@ -142,7 +158,7 @@
 			<div class="col-sm-12 col-md-6 col-lg-4">
 				<!-- CARD 1 -->
 				<div class="card">
-					<img class="card-img-top" src="images/image1.jpg" alt="...">
+					<img class="card-img-top" id="card1-image" src="images/image1.jpg" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">Card 1</h5>
 							<p class="card-text">Cards layout copy adjust according to screen size.</p>
@@ -158,7 +174,7 @@
 							</div>
 					</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-4">
+			<div class="col-sm-12 col-md-12 col-lg-4" id="card3-column">
 				<div class="card">
 						<img class="card-img-top" src="images/image3.jpg" alt="...">
 							<div class="card-body">
@@ -178,6 +194,36 @@
 	</div>	
 	
 	
+	
+<!-- JAVASCRIPT -->
+	
+<script>
+	const mediumScreen = window.matchMedia(
+		// same as media query above
+		"(min-width: 768px) and (max-width: 1023px)"
+	);
+	
+	function adjustCards() {
+		const card1Image = document.getElementById("card1-image");
+		const card3 = document.getElementById("card3-column");
+		
+		if (mediumScreen.matches) {
+			//change card image
+			card1Image.src = "images/image4.jpg";
+		} else {
+			card1Image.src = "images/image1.jpg";
+			
+		}
+		
+		
+	} //END OF FUNCTION
+	
+	//RUN FUNCTION
+	adjustCards();
+	mediumScreen.addEventListener("change", adjustCards);
+	
+	
+</script>	
 	
 	
 	
