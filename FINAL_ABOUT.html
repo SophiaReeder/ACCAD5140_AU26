@@ -21,12 +21,264 @@
 		[class^="col-"], [class*=" col-"] {
 			padding-top: 0.75rem;
 			padding-bottom: 0.75rem;
-			border: 1px, solid rgba(86, 61, 124, 0.2);
-			text-align: center;
+			border: 1px solid rgba(86, 61, 124, 0.2);
 		} /* END OF CLASS */
-	
-		
-		
+
+	/* DEFAULT FONT SIZE */
+	html {
+		font-size: calc(15px + 0.4vw);
+	} /* END OF HTML */
+
+	/* STICKY AUTO-HIDE NAVBAR BASE CSS */
+	.site-navbar {
+		position: sticky;
+		top: 0;
+		z-index: 1030;
+		background-color: #193b54;
+		transition: transform 0.35s ease;
+	}
+
+	.site-navbar.nav-hidden {
+		transform: translateY(-100%);
+	}
+
+	/* FOOTER BASE CSS */
+	.site-footer {
+		background-color: #193b54;
+		color: #ffffff;
+	}
+
+	.footer-left {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.footer-avatar {
+		object-fit: contain;
+	}
+
+	.footer-info p {
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	.footer-brand-line {
+		letter-spacing: 0.03em;
+	}
+
+	.footer-copy {
+		margin-top: 0.4rem !important;
+		opacity: 0.9;
+	}
+
+	.footer-links {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.55rem;
+	}
+
+	.footer-link-item {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		color: #ffffff;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+	}
+
+	.footer-link-item:hover {
+		color: #c3ccd6;
+		transform: translateX(2px);
+	}
+
+	.footer-icon {
+		width: 16px;
+		height: 16px;
+		flex-shrink: 0;
+	}
+
+	/* UNIFIED PILL BUTTON BASE CSS */
+	.nav-pill-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #3b617d;
+		color: #ffffff;
+		border: none;
+		border-radius: 999px;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		line-height: 1;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+		transition: background-color 0.2s ease, transform 0.2s ease;
+		cursor: pointer;
+	}
+
+	.nav-pill-btn:hover {
+		background-color: #497494;
+		transform: translateY(-1px);
+	}
+
+	/* SEE MORE BUTTON VARIANT */
+	.btn-see-more {
+		background-color: #9D769C;
+	}
+
+	.btn-see-more:hover {
+		background-color: #845e83;
+	}
+
+	.nav-brand-btn {
+		position: relative;
+		overflow: visible;
+	}
+
+	.nav-avatar {
+		position: absolute;
+		bottom: 0;
+		object-fit: contain;
+		object-position: bottom;
+		border-radius: 4px;
+	}
+
+	.nav-link-group {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+	}
+
+	/* MOST CSS SHOULD BE WITHIN A MEDIA QUERY */
+	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR LARGE SCREENS */
+	@media (min-width: 1024px) and (max-width: 2560px) {
+		.site-navbar {
+			padding: calc(24px + 0.45rem) 2.5rem 0.45rem 2.5rem;
+		}
+
+		.site-footer {
+			padding: 1.75rem 2.5rem;
+		}
+
+		.footer-avatar {
+			width: 105px;
+			height: 105px;
+		}
+
+		.footer-info p,
+		.footer-link-item {
+			font-size: 16px;
+		}
+
+		.nav-pill-btn {
+			padding: 0.45rem 1.4rem;
+			font-size: 16px;
+		}
+
+		.nav-brand-btn {
+			padding: 0.45rem 1.35rem 0.45rem 3.7rem;
+		}
+
+		.nav-avatar {
+			left: 0.55rem;
+			width: 44px;
+			height: 44px;
+		}
+
+		.nav-link-group {
+			gap: 1.1rem;
+		}
+	} /* END OF MEDIA FOR LG */
+
+	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR MEDIUM SCREENS */
+	@media (min-width: 768px) and (max-width: 1023px) {
+		.site-navbar {
+			padding: calc(24px + 0.4rem) 1.5rem 0.4rem 1.5rem;
+		}
+
+		.site-footer {
+			padding: 1.5rem 1.5rem;
+		}
+
+		.footer-avatar {
+			width: 88px;
+			height: 88px;
+		}
+
+		.footer-info p,
+		.footer-link-item {
+			font-size: 15px;
+		}
+
+		.nav-pill-btn {
+			padding: 0.4rem 1.1rem;
+			font-size: 15px;
+		}
+
+		.nav-brand-btn {
+			padding: 0.4rem 1.1rem 0.4rem 3.3rem;
+		}
+
+		.nav-avatar {
+			left: 0.45rem;
+			width: 40px;
+			height: 40px;
+		}
+
+		.nav-link-group {
+			gap: 0.7rem;
+		}
+	} /* END OF MEDIA FOR MD */
+
+	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR SMALL SCREENS */
+	@media (max-width: 767px) {
+		.site-navbar {
+			padding: calc(24px + 0.4rem) 1rem 0.4rem 1rem;
+		}
+
+		.site-footer {
+			padding: 1.25rem 1rem;
+		}
+
+		.footer-left {
+			gap: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.footer-avatar {
+			width: 70px;
+			height: 70px;
+		}
+
+		.footer-info p,
+		.footer-link-item {
+			font-size: 14px;
+		}
+
+		.nav-pill-btn {
+			padding: 0.35rem 0.9rem;
+			font-size: 14px;
+		}
+
+		.nav-brand-btn {
+			padding: 0.35rem 0.95rem 0.35rem 2.9rem;
+		}
+
+		.nav-avatar {
+			left: 0.4rem;
+			width: 35px;
+			height: 35px;
+		}
+
+		.nav-link-group {
+			justify-content: flex-start;
+			gap: 0.45rem;
+			margin-top: 0.35rem;
+		}
+	} /* END OF MEDIA FOR SM */
 	</style>
 	
 </head>
@@ -35,14 +287,18 @@
 	<!-- MULTIPLE BREAKPOINTS -->
 	<!-- XS < 576,   SM >= 576,   MD >= 768,   LG >= 1024,   XL >= 1280,   2XL >= 1536 -->
 	<div class="container-fluid" id="">
-		<div class="row" id="">
-			<div class="col-sm-3">
-				<button class="logo" onclick="window.location.href='FINAL_HOME.html'">LOGO</button>
+		<!-- STICKY AUTO-HIDE NAVBAR -->
+		<div class="row site-navbar align-items-center" id="mainNavbar">
+			<div class="col-12 col-md-4 border-0 py-0">
+				<button class="nav-pill-btn nav-brand-btn" onclick="window.location.href='FINAL_HOME.html'">
+					<img src="final-images/me.png" alt="Sophia Reeder Avatar" class="nav-avatar">
+					<span>SOPHIA REEDER</span>
+				</button>
 			</div>
-			<div class="col-sm-9">
-				<button class="interactive" onclick="window.location.href='FINAL_INTERACTIVE.html'">GAMES &amp; INTERACTIVE WORK</button>
-				<button class="animation" onclick="window.location.href='FINAL_ANIMATION.html'">ANIMATION WORK</button>
-				<button class="about" onclick="window.location.href='FINAL_ABOUT.html'">ABOUT</button>
+			<div class="col-12 col-md-8 border-0 py-0 nav-link-group">
+				<button class="nav-pill-btn" onclick="window.location.href='FINAL_INTERACTIVE.html'">UI/UX</button>
+				<button class="nav-pill-btn" onclick="window.location.href='FINAL_ANIMATION.html'">ANIMATION</button>
+				<button class="nav-pill-btn" onclick="window.location.href='FINAL_ABOUT.html'">ABOUT</button>
 			</div>
 		</div>
 		
@@ -50,7 +306,13 @@
 			<div class="col-sm-12 col-md-5 col-lg-4">
 				<img id="" src="final-images/about/me-img1.png" class="img-fluid" alt="me">
 			</div>
-			<div class="col-sm-12 col-md-7 col-lg-8">MAIN TEXT 1</div>
+			<div class="col-sm-12 col-md-7 col-lg-8">
+				<h1>Hey There!</h1>
+				<p>Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production &amp; Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.</p>
+				
+				<p>She is currently the motion capture GRA and works with both markered and markerless technology. Her research look into how scaffolding the presentation of educational content in serious games can aid player's knowledge retention and transfer of information. She brings her background in communication technology and experience as a UI/UX designer to create intuitive interactive experiences. Sophia hopes to produce diverse and engaging stories that make a difference beyond the digital world. Sophia enjoys creating UI for games, editing motion capture footage, and running user testing.</p>
+
+			</div>
 		</div>
 		
 		<div class="row" id="">
@@ -76,7 +338,7 @@
 			<div class="col-sm-12 col-md-7 col-lg-8">
 				<form id="" onsubmit="event.preventDefault(); imageLabel();">
                 	<div>
-                    	<input type="text" id="" class="form-control" placeholder= "Ex: Sophia Reeder">
+                    	<input type="text" id="" class="form-control" placeholder="Ex: Sophia Reeder">
                     </div>						
                 </form>
 			</div>
@@ -87,7 +349,7 @@
 			<div class="col-sm-12 col-md-7 col-lg-8">
 				<form id="" onsubmit="event.preventDefault(); imageLabel();">
                 	<div>
-                    	<input type="text" id="" class="form-control" placeholder= "Ex: sophia.reeder@gmail.com">
+                    	<input type="text" id="" class="form-control" placeholder="Ex: sophia.reeder@gmail.com">
                     </div>						
                 </form>
 			</div>
@@ -97,7 +359,7 @@
 			<div class="col-sm-12 col-md-7 col-lg-8">
 				<form id="" onsubmit="event.preventDefault(); imageLabel();">
                 	<div>
-                    	<input type="text" id="labelInput" class="form-control" placeholder= "Type message here.">
+                    	<input type="text" id="labelInput" class="form-control" placeholder="Type message here.">
                     </div>						
                 </form>
 			</div>
@@ -106,25 +368,70 @@
 		<div class="row" id="">
 			<div class="col-sm-12 col-md-5 col-lg-4"></div>
 			<div class="col-sm-12 col-md-7 col-lg-8">
-				<button>SEND BUTTON</button>
+				<button class="nav-pill-btn">SEND BUTTON</button>
 			</div>
 		</div>
 		
-		
-		<div class="row" id="">
-			<div class="col-sm-12 col-md-12 col-lg-12">FOOTER</div>
+		<!-- FOOTER -->
+		<div class="row site-footer align-items-center justify-content-between" id="">
+			<div class="col-12 col-md-8 border-0 py-0 footer-left">
+				<img src="final-images/me.png" alt="Sophia Reeder Avatar" class="footer-avatar">
+				<div class="footer-info">
+					<p class="footer-brand-line">SOPHIA REEDER &nbsp;|&nbsp; <em>sophia.reeder@gmail.com</em></p>
+					<p class="footer-copy">@2026</p>
+				</div>
+			</div>
+			<div class="col-12 col-md-auto border-0 py-0 footer-links">
+				<!-- Contact Link -->
+				<a href="mailto:sophia.reeder@gmail.com" class="footer-link-item">
+					<svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+						<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+					</svg>
+					<span>Contact</span>
+				</a>
+				<!-- LinkedIn Link (Replace # with your LinkedIn URL) -->
+				<a href="#" target="_blank" rel="noopener noreferrer" class="footer-link-item">
+					<svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+					</svg>
+					<span>LinkedIn</span>
+				</a>
+				<!-- YouTube Link (Replace # with your YouTube URL) -->
+				<a href="#" target="_blank" rel="noopener noreferrer" class="footer-link-item">
+					<svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+					</svg>
+					<span>YouTube</span>
+				</a>
+				<!-- CV Link (Replace # with path to your CV PDF) -->
+				<a href="#" target="_blank" rel="noopener noreferrer" class="footer-link-item">
+					<svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+						<polyline points="14 2 14 8 20 8"></polyline>
+					</svg>
+					<span>CV</span>
+				</a>
+			</div>
 		</div>
-		
-		
-		
 	</div>
-	
-	
-	
-	
-	
-</body>
-	
 
-	
+	<!-- STICKY HIDE-ON-SCROLL SCRIPT -->
+	<script>
+		let lastScrollTop = 0;
+		const navbar = document.getElementById("mainNavbar");
+
+		window.addEventListener("scroll", function () {
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+			if (currentScroll > lastScrollTop && currentScroll > 80) {
+				navbar.classList.add("nav-hidden");
+			} else {
+				navbar.classList.remove("nav-hidden");
+			}
+
+			lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+		});
+	</script>
+</body>
 </html>
