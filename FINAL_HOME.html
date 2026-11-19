@@ -21,6 +21,29 @@
 		[class^="col-"], [class*=" col-"] {
 			border: 1px solid rgba(86, 61, 124, 0.2);
 		} /* END OF CLASS */
+
+		/* NON-INTERACTABLE PILL LABELS */
+		.tag-group {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			margin-top: 0.75rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.work-tag {
+			display: inline-block;
+			background-color: #c3ccd6;
+			color: #1d3c4e;
+			border: 1.5px solid #1d3c4e;
+			border-radius: 999px;
+			padding: 0.35rem 1.1rem;
+			font-size: 0.9rem;
+			font-weight: 400;
+			line-height: 1.2;
+			pointer-events: none;
+			user-select: none;
+		}
 	</style>
 	
 </head>
@@ -56,9 +79,14 @@
 				<img id="" src="final-images/comcast-img1.png" class="img-fluid" alt="Comcast header image">
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-5">
-				<h2>TITLE</h2>
-				<h6>Subtitle</h6>
-				<p>Main text 1</p>
+				<h2>COMCAST IOP EMPLOYEE PORTAL</h2>
+				<div class="tag-group">
+					<span class="work-tag">Web &amp; Mobile</span>
+					<span class="work-tag">Corporate</span>
+					<span class="work-tag">Task Manager</span>
+				</div>
+				<p>The Incident Operational Platform (IOP) manages alerts, tracks tickets and documents incidents in conjunction with project management software like Jira.</p>
+				<button>SEE MORE</button>
 			</div>
 		</div>
 		
@@ -66,7 +94,16 @@
 			<div class="col-sm-12 col-md-12 col-lg-7">
 				<img id="" src="final-images/anatomoves-img1.png" class="img-fluid" alt="AnatoMoves header image">
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-5">MAIN TEXT 2</div>
+			<div class="col-sm-12 col-md-12 col-lg-5">
+				<h2>ANATOMOVES</h2>
+				<div class="tag-group">
+					<span class="work-tag">Interface</span>
+					<span class="work-tag">Mocap</span>
+					<span class="work-tag">Education</span>
+				</div>
+				<p>An interface created for customizing educational anatomy sessions using real-time motion capture technology.</p>
+				<button>SEE MORE</button>
+			</div>
 		</div>
 		
 		<div class="row" id="">
@@ -77,19 +114,49 @@
 		<div class="col-12">
 			<div id="carouselMultiple" class="carousel slide" data-bs-ride="carousel">
 
-				<!-- Slides (3 images per slide) -->
+				<!-- Slides (3 cards per slide) -->
 				<div class="carousel-inner">
 					<!-- Slide 1 (must have 'active') -->
 					<div class="carousel-item active">
 						<div class="row g-3">
 							<div class="col-md-4">
-								<img src="final-images/comcast-img1.png" class="d-block w-100 rounded-5" alt="Project 1">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/comcast-img1.png" class="card-img-top" alt="Project 1">
+									<div class="card-body">
+										<h5 class="card-title">Comcast IOP Employee Portal</h5>
+										<div class="tag-group">
+											<span class="work-tag">Web &amp; Mobile</span>
+											<span class="work-tag">Corporate</span>
+											<span class="work-tag">Task Manager</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-4">
-								<img src="final-images/dnd-img1.png" class="d-block w-100 rounded-5" alt="Project 2">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/dnd-img1.png" class="card-img-top" alt="Project 2">
+									<div class="card-body">
+										<h5 class="card-title">D&amp;D Project</h5>
+										<div class="tag-group">
+											<span class="work-tag">AR</span>
+											<span class="work-tag">Game</span>
+											<span class="work-tag">Education</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-4">
-								<img src="final-images/anatomoves-img1.png" class="d-block w-100 rounded-5" alt="Project 3">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/anatomoves-img1.png" class="card-img-top" alt="Project 3">
+									<div class="card-body">
+										<h5 class="card-title">AnatoMoves</h5>
+										<div class="tag-group">
+											<span class="work-tag">Interface</span>
+											<span class="work-tag">Mocap</span>
+											<span class="work-tag">Education</span>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -98,13 +165,43 @@
 					<div class="carousel-item">
 						<div class="row g-3">
 							<div class="col-md-4">
-								<img src="final-images/ctrl-img1.png" class="d-block w-100 rounded-5" alt="Project 4">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/ctrl-img1.png" class="card-img-top" alt="Project 4">
+									<div class="card-body">
+										<h5 class="card-title">Ctrl+Shift Webpage</h5>
+										<div class="tag-group">
+											<span class="work-tag">Web &amp; Mobile</span>
+											<span class="work-tag">Non-profit</span>
+											<span class="work-tag">Awards Winners</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-4">
-								<img src="final-images/goodsoup-img1.png" class="d-block w-100 rounded-5" alt="Project 5">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/goodsoup-img1.png" class="card-img-top" alt="Project 5">
+									<div class="card-body">
+										<h5 class="card-title">Good Soup</h5>
+										<div class="tag-group">
+											<span class="work-tag">Game</span>
+											<span class="work-tag">Point &amp; CLick</span>
+											<span class="work-tag">Cozy</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-4">
-								<img src="final-images/rolecall-img1.png" class="d-block w-100 rounded-5" alt="Project 6">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/rolecall-img1.png" class="card-img-top" alt="Project 6">
+									<div class="card-body">
+										<h5 class="card-title">Role Call</h5>
+										<div class="tag-group">
+											<span class="work-tag">Game</span>
+											<span class="work-tag">Point &amp; Click</span>
+											<span class="work-tag">Management</span>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -133,19 +230,49 @@
 		<div class="col-12">
 			<div id="carouselMultiple2" class="carousel slide" data-bs-ride="carousel">
 
-				<!-- Slides (3 images per slide) -->
+				<!-- Slides (3 cards per slide) -->
 				<div class="carousel-inner">
 					<!-- Slide 1 (must have 'active') -->
 					<div class="carousel-item active">
 						<div class="row g-3">
 							<div class="col-md-4">
-								<img src="final-images/arro-img1.png" class="d-block w-100 rounded-5" alt="Project 1">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/arro-img1.png" class="card-img-top" alt="Project 1">
+									<div class="card-body">
+										<h5 class="card-title">Arro</h5>
+										<div class="tag-group">
+											<span class="work-tag">2D</span>
+											<span class="work-tag">Short</span>
+											<span class="work-tag">Experimental</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-4">
-								<img src="final-images/catch-img1.png" class="d-block w-100 rounded-5" alt="Project 2">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/catch-img1.png" class="card-img-top" alt="Project 2">
+									<div class="card-body">
+										<h5 class="card-title">Catch Me if You Can</h5>
+										<div class="tag-group">
+											<span class="work-tag">3D</span>
+											<span class="work-tag">Short</span>
+											<span class="work-tag">Mocap</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-4">
-								<img src="final-images/roam-img1.png" class="d-block w-100 rounded-5" alt="Project 3">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/roam-img1.png" class="card-img-top" alt="Project 3">
+									<div class="card-body">
+										<h5 class="card-title">Room to Roam</h5>
+										<div class="tag-group">
+											<span class="work-tag">2D</span>
+											<span class="work-tag">Colorful</span>
+											<span class="work-tag">Comedy</span>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -154,10 +281,30 @@
 					<div class="carousel-item">
 						<div class="row g-3">
 							<div class="col-md-4">
-								<img src="final-images/beware-img1.png" class="d-block w-100 rounded-5" alt="Project 4">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/beware-img1.png" class="card-img-top" alt="Project 4">
+									<div class="card-body">
+										<h5 class="card-title">Beware of Bevis</h5>
+										<div class="tag-group">
+											<span class="work-tag">Storyboards</span>
+											<span class="work-tag">Animatic</span>
+											<span class="work-tag">Spooky</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-md-4">
-								<img src="final-images/uninter-img1.png" class="d-block w-100 rounded-5" alt="Project 5">
+								<div class="card h-100 rounded-5 overflow-hidden">
+									<img src="final-images/uninter-img1.png" class="card-img-top" alt="Project 5">
+									<div class="card-body">
+										<h5 class="card-title">Uninterrupted</h5>
+										<div class="tag-group">
+											<span class="work-tag">2D</span>
+											<span class="work-tag">Animatic</span>
+											<span class="work-tag">Preproduction</span>
+										</div>
+									</div>
+								</div>
 							</div>
 							
 						</div>
