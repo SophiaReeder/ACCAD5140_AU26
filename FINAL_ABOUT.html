@@ -7,7 +7,12 @@
     <meta name="author" content="Sophia Reeder">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Sophia Reeder Portfolio Game &amp; Interactive Work</title>
+    <title>Sophia Reeder Portfolio About</title>
+
+    <!-- GOOGLE FONTS: PLUS JAKARTA SANS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
     <!-- BOOTSTRAP & CSS REFERENCES -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,17 +22,72 @@
 	
 	<style>
 	/* CSS HERE */
-	/* 5.3 BOOTSTRAP VERSION*/
-		[class^="col-"], [class*=" col-"] {
-			padding-top: 0.75rem;
-			padding-bottom: 0.75rem;
-			border: 1px solid rgba(86, 61, 124, 0.2);
-		} /* END OF CLASS */
+	/* 5.3 BOOTSTRAP VERSION */
+	[class^="col-"], [class*=" col-"] {
+		padding-top: 0;
+		padding-bottom: 0;
+		border: 1px solid rgba(86, 61, 124, 0.2);
+	} /* END OF CLASS */
 
-	/* DEFAULT FONT SIZE */
+	/* DEFAULT FONT FAMILY & BASE SIZE */
 	html {
-		font-size: calc(15px + 0.4vw);
-	} /* END OF HTML */
+		font-size: 16px;
+	}
+
+	body {
+		font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		font-weight: 400;
+		line-height: 1.65;
+		letter-spacing: 0.01em;
+		color: #193b54;
+	}
+
+	/* TYPOGRAPHY HIERARCHY */
+	.section-heading {
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #193b54;
+	}
+
+	.about-bio-text {
+		font-weight: 300;
+		line-height: 1.75;
+	}
+
+	.tool-stack-label,
+	.form-label-col {
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #193b54;
+	}
+
+	.tool-stack-icons {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1.25rem;
+	}
+
+	.tool-stack-icons img {
+		max-height: 56px;
+		width: auto;
+	}
+
+	.contact-input {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-weight: 300;
+		padding: 0.75rem 1rem;
+		border-radius: 0.75rem;
+		border: 1.5px solid #c3ccd6;
+		color: #193b54;
+	}
+
+	.contact-input:focus {
+		border-color: #193b54;
+		box-shadow: 0 0 0 0.2rem rgba(25, 59, 84, 0.15);
+	}
 
 	/* STICKY AUTO-HIDE NAVBAR BASE CSS */
 	.site-navbar {
@@ -51,7 +111,7 @@
 	.footer-left {
 		display: flex;
 		align-items: center;
-		gap: 1.5rem;
+		gap: 1.75rem;
 	}
 
 	.footer-avatar {
@@ -60,15 +120,16 @@
 
 	.footer-info p {
 		margin: 0;
-		line-height: 1.5;
+		font-weight: 300;
+		line-height: 1.55;
 	}
 
 	.footer-brand-line {
-		letter-spacing: 0.03em;
+		letter-spacing: 0.05em;
 	}
 
 	.footer-copy {
-		margin-top: 0.4rem !important;
+		margin-top: 0.45rem !important;
 		opacity: 0.9;
 	}
 
@@ -76,7 +137,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 0.55rem;
+		gap: 0.6rem;
 	}
 
 	.footer-link-item {
@@ -84,6 +145,8 @@
 		align-items: center;
 		gap: 0.65rem;
 		color: #ffffff;
+		font-weight: 300;
+		letter-spacing: 0.02em;
 		text-decoration: underline;
 		text-underline-offset: 4px;
 		transition: opacity 0.2s ease, transform 0.2s ease;
@@ -109,8 +172,9 @@
 		color: #ffffff;
 		border: none;
 		border-radius: 999px;
+		font-family: 'Plus Jakarta Sans', sans-serif;
 		font-weight: 500;
-		letter-spacing: 0.04em;
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		line-height: 1;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
@@ -156,11 +220,49 @@
 	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR LARGE SCREENS */
 	@media (min-width: 1024px) and (max-width: 2560px) {
 		.site-navbar {
-			padding: calc(24px + 0.45rem) 2.5rem 0.45rem 2.5rem;
+			padding: calc(24px + 0.55rem) 4rem 0.55rem 4rem;
+		}
+
+		.about-hero-row {
+			padding: 4rem 4rem 2.75rem 4rem;
+			align-items: center;
+		}
+
+		.about-bio-text {
+			padding-left: 2.75rem;
+			font-size: 1.05rem;
+		}
+
+		.tool-stack-row {
+			padding: 1.5rem 4rem 3rem 4rem;
+			align-items: center;
+		}
+
+		.tool-stack-label,
+		.form-label-col {
+			font-size: 0.95rem;
+		}
+
+		.section-heading-row {
+			padding: 3rem 4rem 1.25rem 4rem;
+		}
+
+		.section-heading {
+			font-size: 1.35rem;
+		}
+
+		.contact-form-row {
+			padding: 0.65rem 4rem;
+			align-items: center;
+		}
+
+		.contact-submit-row {
+			padding: 1rem 4rem 3rem 4rem;
 		}
 
 		.site-footer {
-			padding: 1.75rem 2.5rem;
+			margin-top: 3rem;
+			padding: 2.25rem 4rem;
 		}
 
 		.footer-avatar {
@@ -174,12 +276,12 @@
 		}
 
 		.nav-pill-btn {
-			padding: 0.45rem 1.4rem;
-			font-size: 16px;
+			padding: 0.5rem 1.45rem;
+			font-size: 15px;
 		}
 
 		.nav-brand-btn {
-			padding: 0.45rem 1.35rem 0.45rem 3.7rem;
+			padding: 0.5rem 1.4rem 0.5rem 3.75rem;
 		}
 
 		.nav-avatar {
@@ -189,18 +291,56 @@
 		}
 
 		.nav-link-group {
-			gap: 1.1rem;
+			gap: 1.15rem;
 		}
 	} /* END OF MEDIA FOR LG */
 
 	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR MEDIUM SCREENS */
 	@media (min-width: 768px) and (max-width: 1023px) {
 		.site-navbar {
-			padding: calc(24px + 0.4rem) 1.5rem 0.4rem 1.5rem;
+			padding: calc(24px + 0.45rem) 2.25rem 0.45rem 2.25rem;
+		}
+
+		.about-hero-row {
+			padding: 3rem 2.25rem 2.25rem 2.25rem;
+			align-items: center;
+		}
+
+		.about-bio-text {
+			padding-left: 1.75rem;
+			font-size: 1rem;
+		}
+
+		.tool-stack-row {
+			padding: 1.25rem 2.25rem 2.5rem 2.25rem;
+			align-items: center;
+		}
+
+		.tool-stack-label,
+		.form-label-col {
+			font-size: 0.9rem;
+		}
+
+		.section-heading-row {
+			padding: 2.5rem 2.25rem 1rem 2.25rem;
+		}
+
+		.section-heading {
+			font-size: 1.2rem;
+		}
+
+		.contact-form-row {
+			padding: 0.55rem 2.25rem;
+			align-items: center;
+		}
+
+		.contact-submit-row {
+			padding: 0.85rem 2.25rem 2.5rem 2.25rem;
 		}
 
 		.site-footer {
-			padding: 1.5rem 1.5rem;
+			margin-top: 2.5rem;
+			padding: 1.85rem 2.25rem;
 		}
 
 		.footer-avatar {
@@ -214,12 +354,12 @@
 		}
 
 		.nav-pill-btn {
-			padding: 0.4rem 1.1rem;
-			font-size: 15px;
+			padding: 0.42rem 1.15rem;
+			font-size: 14px;
 		}
 
 		.nav-brand-btn {
-			padding: 0.4rem 1.1rem 0.4rem 3.3rem;
+			padding: 0.42rem 1.15rem 0.42rem 3.3rem;
 		}
 
 		.nav-avatar {
@@ -229,18 +369,58 @@
 		}
 
 		.nav-link-group {
-			gap: 0.7rem;
+			gap: 0.75rem;
 		}
 	} /* END OF MEDIA FOR MD */
 
 	/* ADJUST CSS FOR BREAKPOINTS - CSS FOR SMALL SCREENS */
 	@media (max-width: 767px) {
 		.site-navbar {
-			padding: calc(24px + 0.4rem) 1rem 0.4rem 1rem;
+			padding: calc(24px + 0.4rem) 1.25rem 0.4rem 1.25rem;
+		}
+
+		.about-hero-row {
+			padding: 2.25rem 1.25rem 1.75rem 1.25rem;
+		}
+
+		.about-bio-text {
+			padding-top: 1.25rem;
+			font-size: 0.95rem;
+		}
+
+		.tool-stack-row {
+			padding: 1rem 1.25rem 2rem 1.25rem;
+		}
+
+		.tool-stack-label {
+			padding-bottom: 0.75rem;
+			font-size: 0.85rem;
+		}
+
+		.form-label-col {
+			padding-bottom: 0.4rem;
+			font-size: 0.85rem;
+		}
+
+		.section-heading-row {
+			padding: 2rem 1.25rem 0.75rem 1.25rem;
+		}
+
+		.section-heading {
+			font-size: 1.1rem;
+		}
+
+		.contact-form-row {
+			padding: 0.5rem 1.25rem;
+		}
+
+		.contact-submit-row {
+			padding: 0.75rem 1.25rem 2rem 1.25rem;
 		}
 
 		.site-footer {
-			padding: 1.25rem 1rem;
+			margin-top: 2rem;
+			padding: 1.5rem 1.25rem;
 		}
 
 		.footer-left {
@@ -259,12 +439,12 @@
 		}
 
 		.nav-pill-btn {
-			padding: 0.35rem 0.9rem;
-			font-size: 14px;
+			padding: 0.38rem 0.95rem;
+			font-size: 13px;
 		}
 
 		.nav-brand-btn {
-			padding: 0.35rem 0.95rem 0.35rem 2.9rem;
+			padding: 0.38rem 1rem 0.38rem 2.9rem;
 		}
 
 		.nav-avatar {
@@ -276,7 +456,7 @@
 		.nav-link-group {
 			justify-content: flex-start;
 			gap: 0.45rem;
-			margin-top: 0.35rem;
+			margin-top: 0.4rem;
 		}
 	} /* END OF MEDIA FOR SM */
 	</style>
@@ -302,70 +482,67 @@
 			</div>
 		</div>
 		
-		<div class="row" id="">
+		<div class="row about-hero-row" id="">
 			<div class="col-sm-12 col-md-5 col-lg-4">
 				<img id="" src="final-images/about/me-img1.png" class="img-fluid" alt="me">
 			</div>
-			<div class="col-sm-12 col-md-7 col-lg-8">
-				<h1>Hey There!</h1>
-				<p>Sophia Reeder earned her BA in Communication Technology and minors in Game Studies and Media Production &amp; Analysis from The Ohio State University in 2024. She has worked as an undergraduate research assistant for Chronos Laboratories, where she helped run participants through studies exploring the impacts of games. She was also the social media manager for Ohio State's Engineering Career Services, where she created educational and engaging online content.</p>
-				
-				<p>She is currently the motion capture GRA and works with both markered and markerless technology. Her research look into how scaffolding the presentation of educational content in serious games can aid player's knowledge retention and transfer of information. She brings her background in communication technology and experience as a UI/UX designer to create intuitive interactive experiences. Sophia hopes to produce diverse and engaging stories that make a difference beyond the digital world. Sophia enjoys creating UI for games, editing motion capture footage, and running user testing.</p>
-
+			<div class="col-sm-12 col-md-7 col-lg-8 about-bio-text">
+				<h1>Hey there!</h1>
+				<p>Sophia Reeder is a designer obsessed with UI micro interactions, cats who sit on windows, and games with branching narratives. Sophia has always been fascinated with how people interact with technology and is passionate about producing diverse stories. She is currently pursing an MFA in Design where her research explores how immersive UI for interactive experiences can be inclusively designed. Currently, Sophia is editing movement as a Motion Capture GRA and volunteering her time to help create a medical app for The James: Cancer Treatment and Research Center.</p>
 			</div>
 		</div>
 		
-		<div class="row" id="">
-			<div class="col-sm-12 col-md-5 col-lg-4">TOOL STACK TITLE</div>
-			<div class="col-sm-12 col-md-7 col-lg-8">
-				<img id="" src="final-images/about/ae-img1.png" class="img-fluid" alt="me">
-				<img id="" src="final-images/about/affinity-img1.png" class="img-fluid" alt="me">
-				<img id="" src="final-images/about/figma-img1.png" class="img-fluid" alt="me">
-				<img id="" src="final-images/about/linear-img1.png" class="img-fluid" alt="me">
-				<img id="" src="final-images/about/mb-img1.png" class="img-fluid" alt="me">
-				<img id="" src="final-images/about/micro-img1.png" class="img-fluid" alt="me">
-				<img id="" src="final-images/about/pr-img1.png" class="img-fluid" alt="me">
-				<img id="" src="final-images/about/ps-img1.png" class="img-fluid" alt="me">
+		<div class="row tool-stack-row" id="">
+			<div class="col-sm-12 col-md-5 col-lg-4 tool-stack-label">TOOL STACK TITLE</div>
+			<div class="col-sm-12 col-md-7 col-lg-8 tool-stack-icons">
+				<img id="" src="final-images/about/ae-img1.png" class="img-fluid" alt="After Effects">
+				<img id="" src="final-images/about/affinity-img1.png" class="img-fluid" alt="Affinity">
+				<img id="" src="final-images/about/figma-img1.png" class="img-fluid" alt="Figma">
+				<img id="" src="final-images/about/linear-img1.png" class="img-fluid" alt="Linear">
+				<img id="" src="final-images/about/mb-img1.png" class="img-fluid" alt="MotionBuilder">
+				<img id="" src="final-images/about/micro-img1.png" class="img-fluid" alt="Miro">
+				<img id="" src="final-images/about/pr-img1.png" class="img-fluid" alt="Premiere Pro">
+				<img id="" src="final-images/about/ps-img1.png" class="img-fluid" alt="Photoshop">
 			</div>
 		</div>
 		
-		<div class="row" id="">
-			<div class="col-sm-12 col-md-12 col-lg-12">CONTACT</div>
+		<div class="row section-heading-row" id="">
+			<div class="col-sm-12 col-md-12 col-lg-12 section-heading">CONTACT</div>
 		</div>
 		
-		<div class="row" id="">
-			<div class="col-sm-12 col-md-5 col-lg-4">NAME</div>
+		<div class="row contact-form-row" id="">
+			<div class="col-sm-12 col-md-5 col-lg-4 form-label-col">NAME</div>
 			<div class="col-sm-12 col-md-7 col-lg-8">
 				<form id="" onsubmit="event.preventDefault(); imageLabel();">
                 	<div>
-                    	<input type="text" id="" class="form-control" placeholder="Ex: Sophia Reeder">
+                    	<input type="text" id="" class="form-control contact-input" placeholder="Ex: Sophia Reeder">
                     </div>						
                 </form>
 			</div>
 		</div>
 		
-		<div class="row" id="">
-			<div class="col-sm-12 col-md-5 col-lg-4">EMAIL</div>
+		<div class="row contact-form-row" id="">
+			<div class="col-sm-12 col-md-5 col-lg-4 form-label-col">EMAIL</div>
 			<div class="col-sm-12 col-md-7 col-lg-8">
 				<form id="" onsubmit="event.preventDefault(); imageLabel();">
                 	<div>
-                    	<input type="text" id="" class="form-control" placeholder="Ex: sophia.reeder@gmail.com">
+                    	<input type="text" id="" class="form-control contact-input" placeholder="Ex: sophia.reeder@gmail.com">
                     </div>						
                 </form>
 			</div>
 		</div>
-		<div class="row" id="">
+		<div class="row contact-form-row" id="">
 			<div class="col-sm-12 col-md-5 col-lg-4"></div>
 			<div class="col-sm-12 col-md-7 col-lg-8">
 				<form id="" onsubmit="event.preventDefault(); imageLabel();">
                 	<div>
-                    	<input type="text" id="labelInput" class="form-control" placeholder="Type message here.">
+                    	<input type="text" id="labelInput" class="form-control contact-input" placeholder="Type message here.">
                     </div>						
                 </form>
 			</div>
 		</div>
 		
-		<div class="row" id="">
+		<div class="row contact-submit-row" id="">
 			<div class="col-sm-12 col-md-5 col-lg-4"></div>
 			<div class="col-sm-12 col-md-7 col-lg-8">
 				<button class="nav-pill-btn">SEND BUTTON</button>
